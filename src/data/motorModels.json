@@ -1,0 +1,142 @@
+[
+  {
+    "id": "honda-beat-110",
+    "name": "Honda Beat 110",
+    "brand": "Honda",
+    "type": "matic",
+    "segment": "entry"
+  },
+  {
+    "id": "honda-scoopy",
+    "name": "Honda Scoopy",
+    "brand": "Honda",
+    "type": "matic",
+    "segment": "entry"
+  },
+  {
+    "id": "honda-vario-125",
+    "name": "Honda Vario 125",
+    "brand": "Honda",
+    "type": "matic",
+    "segment": "premium"
+  },
+  {
+    "id": "honda-vario-160",
+    "name": "Honda Vario 160",
+    "brand": "Honda",
+    "type": "matic",
+    "segment": "premium"
+  },
+  {
+    "id": "honda-pcx-160",
+    "name": "Honda PCX 160",
+    "brand": "Honda",
+    "type": "matic",
+    "segment": "premium"
+  },
+  {
+    "id": "honda-adv-160",
+    "name": "Honda ADV 160",
+    "brand": "Honda",
+    "type": "matic",
+    "segment": "premium"
+  },
+  {
+    "id": "honda-supra-x-125",
+    "name": "Honda Supra X 125",
+    "brand": "Honda",
+    "type": "manual",
+    "segment": "manual"
+  },
+  {
+    "id": "honda-revo",
+    "name": "Honda Revo",
+    "brand": "Honda",
+    "type": "manual",
+    "segment": "manual"
+  },
+  {
+    "id": "honda-crf150l",
+    "name": "Honda CRF150L",
+    "brand": "Honda",
+    "type": "manual",
+    "segment": "manual"
+  },
+  {
+    "id": "yamaha-nmax-155",
+    "name": "Yamaha NMAX 155",
+    "brand": "Yamaha",
+    "type": "matic",
+    "segment": "premium"
+  },
+  {
+    "id": "yamaha-aerox-155",
+    "name": "Yamaha Aerox 155",
+    "brand": "Yamaha",
+    "type": "matic",
+    "segment": "premium"
+  },
+  {
+    "id": "yamaha-lexi-125",
+    "name": "Yamaha Lexi 125",
+    "brand": "Yamaha",
+    "type": "matic",
+    "segment": "premium"
+  },
+  {
+    "id": "yamaha-fazzio",
+    "name": "Yamaha Fazzio",
+    "brand": "Yamaha",
+    "type": "matic",
+    "segment": "entry"
+  },
+  {
+    "id": "yamaha-grand-filano",
+    "name": "Yamaha Grand Filano",
+    "brand": "Yamaha",
+    "type": "matic",
+    "segment": "entry"
+  },
+  {
+    "id": "yamaha-mio-m3",
+    "name": "Yamaha Mio M3",
+    "brand": "Yamaha",
+    "type": "matic",
+    "segment": "entry"
+  },
+  {
+    "id": "yamaha-gear-125",
+    "name": "Yamaha Gear 125",
+    "brand": "Yamaha",
+    "type": "matic",
+    "segment": "entry"
+  },
+  {
+    "id": "yamaha-vixion",
+    "name": "Yamaha Vixion",
+    "brand": "Yamaha",
+    "type": "manual",
+    "segment": "manual"
+  },
+  {
+    "id": "yamaha-r15",
+    "name": "Yamaha R15",
+    "brand": "Yamaha",
+    "type": "manual",
+    "segment": "manual"
+  },
+  {
+    "id": "suzuki-nex-ii",
+    "name": "Suzuki Nex II",
+    "brand": "Suzuki",
+    "type": "matic",
+    "segment": "entry"
+  },
+  {
+    "id": "suzuki-satria-f150",
+    "name": "Suzuki Satria F150",
+    "brand": "Suzuki",
+    "type": "manual",
+    "segment": "manual"
+  }
+]

@@ -1,0 +1,329 @@
+[
+  {
+    "id": "honda-beat-vbelt-special",
+    "model_ids": ["honda-beat-110", "honda-scoopy"],
+    "range_km_min": 18000,
+    "range_km_max": 22000,
+    "must_do": [
+      {
+        "task": "Ganti V-Belt (Early replacement)",
+        "interval": "Disarankan per 20.000-25.000 km (Data Tropis)",
+        "due_km": 20000
+      }
+    ],
+    "check": ["Roller Condition", "Rumah Roller"],
+    "human_message": "Berdasarkan data empiris, V-Belt motor 110cc seringkali lebih cepat aus di kondisi macet. Sebaiknya ganti di 20.000 km untuk keamanan."
+  },
+  {
+    "id": "air-cooled-matic-0k-4k",
+    "model_ids": [
+      "honda-beat-110",
+      "honda-scoopy",
+      "yamaha-mio-m3",
+      "yamaha-gear-125",
+      "yamaha-fazzio",
+      "yamaha-grand-filano",
+      "suzuki-nex-ii"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 4000,
+    "must_do": [
+      {
+        "task": "Ganti Oli Mesin (0.65L - 0.8L)",
+        "interval": "1.000 KM Pertama",
+        "due_km": 1000
+      }
+    ],
+    "check": [
+      "Tekanan Ban",
+      "Rem Depan/Belakang",
+      "Lampu & Sinyal",
+      "Tegangan Aki (Khusus Hybrid Fazzio/Filano)"
+    ],
+    "human_message": "Motor baru! Ganti oli mesin di 1.000 km pertama. Catatan: BeAT/Scoopy 2024+ hanya butuh 650ml oli. Motor kamu berpendingin udara, jaga sirip mesin tetap bersih."
+  },
+  {
+    "id": "air-cooled-matic-4k-20k",
+    "model_ids": [
+      "honda-beat-110",
+      "honda-scoopy",
+      "yamaha-mio-m3",
+      "yamaha-gear-125",
+      "yamaha-fazzio",
+      "yamaha-grand-filano",
+      "suzuki-nex-ii"
+    ],
+    "range_km_min": 4001,
+    "range_km_max": 20000,
+    "must_do": [
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Setiap 2.000 km (BeAT 2024) / 3.000 km (Yamaha/Suzuki) / 4.000 km (Honda Lama)",
+        "due_km": 3000
+      },
+      {
+        "task": "Ganti Oli Gardan",
+        "interval": "Setiap 8.000-10.000 km",
+        "due_km": 8000
+      },
+      {
+        "task": "Bersihkan CVT (Cegah Gredek)",
+        "interval": "Setiap 8.000 km",
+        "due_km": 8000
+      },
+      {
+        "task": "Cek Tegangan Aki (Hybrid Assist)",
+        "interval": "Setiap 6 Bulan / 6.000 KM",
+        "due_km": 6000
+      }
+    ],
+    "check": [
+      "Ganti Filter Udara (Tipe Viskos - Jangan Disemprot Angin)",
+      "Kampas Rem",
+      "Busi",
+      "V-Belt Condition"
+    ],
+    "human_message": "Jaga rutinitas ganti oli. BeAT/Scoopy 2024 wajib ganti tiap 2.000 km karena kapasitas hanya 650ml. Suzuki Nex II (650ml). Fazzio/Filano (Aki >12.4V). Jangan simpan remote dekat motor."
+  },
+  {
+    "id": "liquid-cooled-matic-125-0k-12k",
+    "model_ids": [
+      "honda-vario-125",
+      "yamaha-lexi-125"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 12000,
+    "must_do": [
+      {
+        "task": "Ganti Oli Mesin (0.8L - 0.9L)",
+        "interval": "Setiap 3.000-4.000 km",
+        "due_km": 4000
+      },
+      {
+        "task": "Cek/Tambah Air Radiator",
+        "interval": "Setiap 5.000 km",
+        "due_km": 5000
+      },
+      {
+        "task": "Ganti Oli Gardan",
+        "interval": "Setiap 10.000 km",
+        "due_km": 10000
+      }
+    ],
+    "check": [
+      "Kebocoran Radiator",
+      "Kampas Rem",
+      "Busi"
+    ],
+    "human_message": "Motor liquid-cooled butuh pengecekan air radiator. Gunakan oli 800ml untuk Vario 125 dan 900ml untuk Lexi 125."
+  },
+  {
+    "id": "liquid-cooled-matic-155-160-0k-12k",
+    "model_ids": [
+      "honda-vario-160",
+      "honda-pcx-160",
+      "honda-adv-160",
+      "yamaha-nmax-155",
+      "yamaha-aerox-155"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 12000,
+    "must_do": [
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Setiap 6.000 km (Honda 160cc) / 3.000 km (Yamaha 155cc)",
+        "due_km": 6000
+      },
+      {
+        "task": "Penyetelan Klep (Valve Clearance) - Yamaha VVA",
+        "interval": "Wajib setiap 8.000 KM (Efek VVA)",
+        "due_km": 8000
+      },
+      {
+        "task": "Penyetelan Klep (Valve Clearance) - Honda 160cc",
+        "interval": "Pengecekan per 12.000-20.000 KM",
+        "due_km": 12000
+      },
+      {
+        "task": "Cek/Tambah Air Radiator",
+        "interval": "Setiap 5.000 km",
+        "due_km": 5000
+      },
+      {
+        "task": "Ganti Oli Gardan",
+        "interval": "Setiap 10.000 km",
+        "due_km": 10000
+      }
+    ],
+    "check": [
+      "Fungsi Kipas Radiator",
+      "Kampas Rem",
+      "V-Belt"
+    ],
+    "human_message": "Buku servis Honda 160cc menyarankan ganti oli per 6.000 km (800ml / 850ml jika kuras strainer) dengan busi NGK LMAR8L-9. Yamaha 155cc (NMAX/Aerox) disarankan ganti per 3.000 km (900ml) dengan busi NGK CPR8EA-9. Untuk kemacetan ekstrem, ganti oli setiap 2.000-2.500 km."
+  },
+  {
+    "id": "keyless-battery-replacement",
+    "model_ids": [
+      "honda-vario-160",
+      "honda-pcx-160",
+      "honda-adv-160",
+      "yamaha-nmax-155",
+      "yamaha-aerox-155",
+      "yamaha-fazzio",
+      "yamaha-grand-filano"
+    ],
+    "range_km_min": 15000,
+    "range_km_max": 25000,
+    "must_do": [
+      {
+        "task": "Ganti Baterai Remote Keyless",
+        "interval": "Estimasi per 2 Tahun",
+        "due_km": 20000
+      }
+    ],
+    "check": ["Responsibilitas Remote"],
+    "human_message": "Baterai remote keyless (CR 2032) biasanya melemah setelah 2 tahun. Ganti sekarang untuk menghindari remote mati mendadak."
+  },
+  {
+    "id": "all-matic-coolant-drain",
+    "model_ids": [
+      "honda-vario-125",
+      "honda-vario-160",
+      "honda-pcx-160",
+      "honda-adv-160",
+      "yamaha-nmax-155",
+      "yamaha-aerox-155",
+      "yamaha-lexi-125"
+    ],
+    "range_km_min": 12000,
+    "range_km_max": 25000,
+    "must_do": [
+      {
+        "task": "Kuras & Ganti Cairan Radiator",
+        "interval": "Disarankan per 12.000-24.000 km (Iklim Tropis)",
+        "due_km": 12000
+      },
+      {
+        "task": "Ganti Minyak Rem (Brake Fluid)",
+        "interval": "Setiap 2 Tahun / 24.000 KM",
+        "due_km": 24000
+      }
+    ],
+    "check": ["Selang Radiator", "Water Pump", "Ketebalan Kampas Rem"],
+    "human_message": "Di iklim tropis, kualitas coolant dan minyak rem lebih cepat menurun (higroskopis). Ganti rutin untuk menjaga performa pengereman dan suhu mesin."
+  },
+  {
+    "id": "manual-maintenance-0k-25k",
+    "model_ids": [
+      "honda-supra-x-125",
+      "honda-revo",
+      "honda-crf150l",
+      "yamaha-vixion",
+      "yamaha-r15",
+      "suzuki-satria-f150"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 25000,
+    "must_do": [
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Setiap 3.000 km",
+        "due_km": 3000
+      },
+      {
+        "task": "Setel Klep (Valve Clearance)",
+        "interval": "4.000 KM (Bebek) / 10.000 KM (Sport) / 20.000 KM (Satria DOHC)",
+        "due_km": 10000
+      },
+      {
+        "task": "Ganti Busi",
+        "interval": "Setiap 8.000 km",
+        "due_km": 8000
+      },
+      {
+        "task": "Periksa Mulur Rantai & Ketajaman Gir",
+        "interval": "Pengecekan per 1.000 KM",
+        "due_km": 15000
+      },
+      {
+        "task": "Servis Besar (Kuras Kerak Mesin)",
+        "interval": "Setiap 20.000 km (Satria F150)",
+        "due_km": 20000
+      }
+    ],
+    "check": [
+      "Kopling",
+      "Filter Udara"
+    ],
+    "human_message": "Untuk Suzuki Satria F150 FI, lakukan servis besar di 20.000 km (Busi: NGK MR8E-9). Jaga rantai tetap bersih dan terlumasi agar tidak berisik."
+  },
+  {
+    "id": "matic-entry-fallback",
+    "model_ids": ["matic-entry-fallback"],
+    "range_km_min": 0,
+    "range_km_max": 25000,
+    "must_do": [
+      { "task": "Ganti Oli Mesin", "interval": "Per 2.500-3.000 km" },
+      { "task": "Ganti Oli Gardan", "interval": "Per 8.000 km" },
+      { "task": "Bersihkan CVT", "interval": "Per 8.000 km" }
+    ],
+    "check": ["Filter Udara", "Rem", "Ban"],
+    "human_message": "Panduan umum matic entry: Ganti oli rutin dan bersihkan CVT setiap 8.000 km agar tidak gredek."
+  },
+  {
+    "id": "matic-premium-fallback",
+    "model_ids": ["matic-premium-fallback"],
+    "range_km_min": 0,
+    "range_km_max": 25000,
+    "must_do": [
+      { "task": "Ganti Oli Mesin", "interval": "Per 3.000-4.000 km" },
+      { "task": "Cek Air Radiator", "interval": "Per 5.000 km" },
+      { "task": "Ganti Oli Gardan", "interval": "Per 10.000 km" }
+    ],
+    "check": ["Sistem Pendingin", "V-Belt", "Rem"],
+    "human_message": "Panduan umum matic premium: pastikan sistem pendingin radiator selalu dalam kondisi optimal dan cek level oli."
+  },
+  {
+    "id": "manual-fallback",
+    "model_ids": ["manual-fallback"],
+    "range_km_min": 0,
+    "range_km_max": 25000,
+    "must_do": [
+      { "task": "Ganti Oli Mesin", "interval": "Per 3.000 km" },
+      { "task": "Lumasi & Setel Rantai", "interval": "Per 1.000 km" },
+      { "task": "Setel Klep", "interval": "Per 10.000 km" }
+    ],
+    "check": ["Kopling", "Busi", "Gir Depan/Belakang"],
+    "human_message": "Panduan umum motor manual: rantai dan oli mesin adalah kunci keawetan mesin kamu."
+  },
+  {
+    "id": "global-fallback-high-km",
+    "model_ids": ["default"],
+    "range_km_min": 25001,
+    "range_km_max": 999999,
+    "must_do": [
+      {
+        "task": "Servis Besar Menyeluruh",
+        "interval": "Segera > 25.000 KM",
+        "due_km": 25000
+      },
+      {
+        "task": "Pembersihan Throttle Body (Injeksi)",
+        "interval": "Setiap 25.000 km",
+        "due_km": 25000
+      },
+      {
+        "task": "Cek Kompresi Mesin & Klep",
+        "interval": "Setiap 20.000 km"
+      }
+    ],
+    "check": [
+      "Seal Shock Breaker (Cek Kebocoran)",
+      "Bearing Roda & Sumbu Kemudi (Komstir)",
+      "Kabel Gas & Rem (Cek Serabut Putus)",
+      "Pengereman Total"
+    ],
+    "human_message": "Motor sudah menempuh jarak sangat jauh. Lakukan servis besar menyeluruh, pembersihan Throttle Body, dan cek komstir untuk memastikan kenyamanan berkendara."
+  }
+]

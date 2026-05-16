@@ -1,0 +1,84 @@
+﻿SYSTEM DIRECTIVE: PROJECT MOTORCARE (MULTI-PAGE UTILITY)
+TO: AI DEVELOPER AGENT
+TASK: Build a Multi-Page Application (SPA with Routing) using React (Vite) + Tailwind CSS + React Router v6.
+CONTEXT: This application is a "Service Dictionary" for laypeople. The user has explicitly requested a multi-page architecture (Landing Page -> Detail Page) and data persistence using localStorage for future scalability. No backend, no login.
+STRICT DIRECTIVES:
+1. Do not over-engineer the state management. Do not use Redux/Zustand. Use native localStorage combined with React Router's state/navigation or simple useEffect hooks.
+2. Prioritize data accuracy and UI simplicity.
+3. Use highly communicative, non-technical Indonesian language in the UI.
+PHASE 1: INITIALIZATION & SETUP
+Execute the following environment setup precisely:
+1. Initialize project: npm create vite@latest perawatan-motor-app -- --template react
+2. Install UI dependencies: npm install -D tailwindcss postcss autoprefixer
+3. Install Routing dependency: npm install react-router-dom
+4. Initialize Tailwind: npx tailwindcss init -p
+5. Configure tailwind.config.js to scan ./index.html and ./src//*.{js,ts,jsx,tsx}.
+6. Inject Tailwind directives into src/index.css.
+PHASE 2: FILE ARCHITECTURE (ROUTING ENABLED)
+Construct the project using this structure. You must separate the views into a pages/ directory.
+perawatan-motor-app/
+├── index.html                  
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
+└── src/
+   ├── main.jsx                # React DOM render & Router Provider setup
+   ├── index.css               # Tailwind imports
+   ├── App.jsx                 # Main Layout wrapper (Headers/Footers if any)
+   ├── data/
+   │   └── serviceData.json    # Static database (JSON format)
+   ├── pages/
+   │   ├── Home.jsx            # Landing Page (Form input)
+   │   └── MotorDetail.jsx     # Detail Page (Reads from localStorage, displays results)
+   └── components/
+       ├── InputForm.jsx       # Component used inside Home.jsx
+       └── ResultCard.jsx      # Component used inside MotorDetail.jsx
+
+PHASE 3: DATA PIPELINE & PERSISTENCE
+3.1 JSON Structure Constraint (src/data/serviceData.json):
+[
+ {
+   "range_km_min": 0,
+   "range_km_max": 4000,
+   "motor_type": "matic",
+   "must_do": ["Ganti Oli Mesin"],
+   "check": ["Tekanan Ban", "Rem Depan/Belakang"],
+   "human_message": "Motor masih seger! Cukup pastikan oli mesin baru diganti biar tarikan tetap enteng."
+ },
+ {
+   "range_km_min": 4001,
+   "range_km_max": 8000,
+   "motor_type": "matic",
+   "must_do": ["Ganti Oli Mesin", "Ganti Oli Gardan", "Ganti Busi"],
+   "check": ["Filter Udara", "Kampas Rem"],
+   "human_message": "Waktunya servis lumayan besar. Jangan lupa oli gardannya juga diganti ya, bukan cuma oli mesin!"
+ },
+ {
+   "range_km_min": 16001,
+   "range_km_max": 24000,
+   "motor_type": "matic",
+   "must_do": ["Ganti Oli Mesin", "Ganti Oli Gardan", "Ganti V-Belt", "Ganti Busi"],
+   "check": ["Kampas Rem", "Filter Udara", "Aki", "Karburator/Injektor"],
+   "human_message": "Servis besar nih! V-belt wajib diganti biar tidak putus di jalan. Cek juga kampas rem dan filter udara."
+ }
+]
+
+3.2 Routing & LocalStorage Logic:
+1. Home.jsx (Input Phase):
+   * Capture user input (Motor Type, Odometer).
+   * On submit: Save the input to localStorage (e.g., localStorage.setItem('motorCareData', JSON.stringify({type, km}))).
+   * Programmatically navigate to /detail using useNavigate().
+2. MotorDetail.jsx (Result Phase):
+   * On mount (useEffect), read localStorage.getItem('motorCareData').
+   * Security/UX Check: If no data exists in localStorage, redirect user back to / (Home) immediately.
+   * If data exists, run the filter logic against serviceData.json.
+   * CRITICAL FALLBACK: If input_km exceeds the highest range_km_max in JSON, return a default fallback object for major checkups instead of crashing.
+   * Pass data to ResultCard.jsx.
+PHASE 4: UX/UI STRICT RULES
+1. Odometer Illiteracy Validation:
+   * Implementation: In Home.jsx, if km_input > 200000, block submission and show an alert: "Wah, angkanya terlalu besar. Coba cek lagi speedometer-nya, masukkan angka yang paling besar saja di depan koma." Do NOT save to localStorage if invalid.
+2. Visual/Iconographic Translation:
+   * Implementation: In ResultCard.jsx, map text to generic inline SVG icons (e.g., oil drop, gear, fan). Do not use external image files.
+3. Data Reset Flow:
+   * Implementation: In MotorDetail.jsx, provide an "Ubah Data Motor / Cek Motor Lain" button. When clicked, this button MUST clear the specific localStorage item and navigate back to / (Home).
+END OF DIRECTIVE. PROCEED TO CODE GENERATION.
