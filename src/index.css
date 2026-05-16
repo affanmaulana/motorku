@@ -72,9 +72,9 @@ body {
 
 /* Glass effect */
 .glass {
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background: rgba(var(--surface-rgb), 0.75);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  background: rgba(var(--surface-rgb), 0.85);
   border: 1px solid var(--border-color);
 }
 
@@ -136,4 +136,12 @@ body {
 }
 .animate-shake {
   animation: shake 0.4s ease-in-out;
+}
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const iconMap = {
   'Ganti Oli Mesin (0.8L)': (
     <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -68,6 +70,48 @@ const checkIcon = (
   </svg>
 )
 
+function CheckItem({ item }) {
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  return (
+    <div
+      className="p-4 rounded-2xl bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/50 hover:border-amber-400/30 transition-all duration-300 group cursor-pointer"
+      onClick={() => setIsExpanded(!isExpanded)}
+    >
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-500/15 flex items-center justify-center text-amber-600 dark:text-amber-400 group-hover:bg-amber-100 dark:group-hover:bg-amber-500/25 transition-colors duration-300 flex-shrink-0">
+          {checkIcon}
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="text-sm font-bold text-slate-800 dark:text-slate-200">{item.task}</p>
+        </div>
+        <div className="flex flex-col items-end justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </div>
+      </div>
+
+      {isExpanded && (
+        <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700/50 animate-fade-in">
+          <p className="text-[11px] leading-relaxed text-slate-600 dark:text-slate-400 font-medium">
+            <span className="text-amber-600 dark:text-amber-400 font-bold">Kenapa perlu dicek?</span> {item.desc}
+          </p>
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function ResultCard({ data, onTaskAction }) {
   if (!data) return null
 
@@ -80,7 +124,7 @@ export default function ResultCard({ data, onTaskAction }) {
             <span className="text-xl">🔧</span>
           </div>
           <div>
-            <h3 className="text-amber-700 dark:text-amber-300 font-bold text-xs uppercase tracking-widest mb-1">Kata Montir</h3>
+            <h3 className="text-amber-700 dark:text-amber-300 font-bold text-xs uppercase tracking-widest mb-1">Kata Montirku</h3>
             <p className="text-slate-800 dark:text-slate-100 text-sm leading-relaxed font-medium">{data.human_message}</p>
           </div>
         </div>
@@ -215,20 +259,7 @@ export default function ResultCard({ data, onTaskAction }) {
         </div>
         <div className="space-y-2.5">
           {data.check.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-3 p-4 rounded-2xl bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/50 hover:border-amber-400/30 hover:shadow-lg hover:shadow-amber-500/5 transition-all duration-300 group"
-            >
-              <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-500/15 flex items-center justify-center text-amber-600 dark:text-amber-400 group-hover:bg-amber-100 dark:group-hover:bg-amber-500/25 transition-colors duration-300 flex-shrink-0">
-                {checkIcon}
-              </div>
-              <span className="text-sm font-bold text-slate-800 dark:text-slate-200">{item}</span>
-              <div className="ml-auto">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-400/10 px-2.5 py-1 rounded-lg">
-                  Cek
-                </span>
-              </div>
-            </div>
+            <CheckItem key={index} item={item} />
           ))}
         </div>
       </div>

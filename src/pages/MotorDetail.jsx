@@ -50,8 +50,10 @@ export default function MotorDetail() {
     }
 
     if (match) {
-      // Categorize tasks
-      const allMustDo = match.must_do || []
+      // Categorize tasks with model-specific filtering
+      const allMustDo = (match.must_do || []).filter(item => 
+        !item.only_for || item.only_for.includes(parsed.type)
+      )
       const shouldHaveDone = []
       const wajibDikerjakan = []
       const aman = []
@@ -75,7 +77,10 @@ export default function MotorDetail() {
         motor_type: model?.type || 'matic',
         should_have_done: shouldHaveDone,
         must_do: wajibDikerjakan,
-        aman: aman
+        aman: aman,
+        check: (match.check || []).filter(item => 
+          !item.only_for || item.only_for.includes(parsed.type)
+        )
       })
     } else {
       // Final absolute fallback
