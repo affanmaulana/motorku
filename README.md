@@ -1,16 +1,23 @@
-# React + Vite
+# Motorku 🏍️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Motorku adalah aplikasi panduan perawatan (servis) sepeda motor yang cerdas, dirancang khusus untuk kondisi operasional di Indonesia (iklim tropis & kemacetan).
 
-Currently, two official plugins are available:
+## Fitur Utama
+- **Rekomendasi Pintar**: Memberikan jadwal servis berdasarkan model motor spesifik (Honda, Yamaha, Suzuki).
+- **Logika Pakar**: Menggunakan data teknis mendalam untuk interval oli, CVT, katup (VVA/DOHC), dan sistem Hybrid.
+- **Konfirmasi Service**: Fitur interaktif untuk melacak tugas yang sudah atau belum dikerjakan.
+- **Support Mode Terang/Gelap**: Desain premium yang nyaman di mata.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Teknologi
+- **Core**: React 19 + Vite
+- **Styling**: Tailwind CSS
+- **Routing**: React Router
+- **Data**: JSON-based service intervals (Expert Validated)
 
-## React Compiler
+## Jalankan Lokal
+1. Clone repo
+2. `npm install`
+3. `npm run dev`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+© 2026 Motorku — Panduan Servis Motor Terpercaya.

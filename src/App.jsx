@@ -35,7 +35,7 @@ function App() {
             </div>
             <div>
               <h1 className="text-lg font-black text-slate-900 dark:text-slate-100 tracking-tight">
-                Motor<span className="gradient-text">Care</span>
+                Motorku
               </h1>
               <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 -mt-0.5">Panduan Servis Motor</p>
             </div>
@@ -73,7 +73,7 @@ function App() {
       <footer className="border-t border-slate-200 dark:border-slate-800/80 py-8 mt-auto bg-slate-50/50 dark:bg-slate-900/50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
-            © 2026 MotorCare — Data bersifat panduan umum.
+            © 2026 Motorku — Data bersifat panduan umum.
           </p>
           <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
             Dibuat untuk membantu perawatan motor kamu agar tetap prima.

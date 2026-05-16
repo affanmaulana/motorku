@@ -14,7 +14,7 @@ export default function MotorDetail() {
   useEffect(() => {
     window.scrollTo(0, 0)
 
-    const raw = localStorage.getItem('motorCareData')
+    const raw = localStorage.getItem('motorkuData')
 
     if (!raw) {
       navigate('/', { replace: true })
@@ -106,7 +106,7 @@ export default function MotorDetail() {
   }
 
   const handleReset = () => {
-    localStorage.removeItem('motorCareData')
+    localStorage.removeItem('motorkuData')
     navigate('/')
   }
 

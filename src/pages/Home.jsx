@@ -5,7 +5,7 @@ export default function Home() {
   const navigate = useNavigate()
 
   const handleSubmit = ({ type, km }) => {
-    localStorage.setItem('motorCareData', JSON.stringify({ type, km }))
+    localStorage.setItem('motorkuData', JSON.stringify({ type, km }))
     navigate('/detail')
   }
 
