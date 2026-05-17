@@ -70,16 +70,16 @@ export default function InputForm({ onSubmit }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-md">
       {/* Searchable Dropdown */}
-      <div className="space-y-2 relative" ref={dropdownRef}>
-        <label className="block text-sm font-bold text-slate-700 dark:text-slate-200">
+      <div className="space-y-xs relative" ref={dropdownRef}>
+        <label className="block text-caption font-semibold text-ink">
           Pilih Motor Kamu
         </label>
 
         <div className="relative">
-          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-slate-400 dark:text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
             </svg>
           </div>
@@ -99,9 +99,8 @@ export default function InputForm({ onSubmit }) {
               setSearchTerm(e.target.value)
               setIsDropdownOpen(true)
             }}
-            className={`w-full pl-11 pr-10 py-4 bg-white dark:bg-slate-800 border-2 rounded-2xl text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500
-              focus:outline-none focus:ring-4 focus:ring-amber-500/10 focus:border-amber-500 transition-all duration-300
-              ${selectedModel ? 'border-amber-500 font-bold' : 'border-slate-200 dark:border-slate-700 shadow-sm'}
+            className={`text-input pl-10 pr-10 font-sans
+              ${selectedModel ? 'border-primary font-medium bg-surface-soft' : 'border-hairline shadow-sm'}
             `}
           />
 
@@ -112,18 +111,18 @@ export default function InputForm({ onSubmit }) {
                 setSelectedModel(null)
                 setSearchTerm('')
               }}
-              className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-red-500 transition-colors cursor-pointer"
+              className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-muted hover:text-signature-coral transition-colors cursor-pointer"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M18 6 6 18M6 6l12 12" />
               </svg>
             </button>
           )}
         </div>
 
-        {/* Dropdown Menu */}
+        {/* Dropdown Menu - Clean Editorial Style */}
         {isDropdownOpen && (
-          <div className="absolute z-[60] w-full mt-2 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl overflow-hidden animate-fade-in-up">
+          <div className="absolute z-[60] w-full mt-1.5 bg-canvas border border-hairline rounded-sm shadow-lg overflow-hidden animate-fade-in-up">
             <div className="max-h-60 overflow-y-auto custom-scrollbar">
               {filteredModels.length > 0 ? (
                 filteredModels.map((model) => (
@@ -136,25 +135,25 @@ export default function InputForm({ onSubmit }) {
                       setIsDropdownOpen(false)
                       setError('')
                     }}
-                    className="w-full text-left px-4 py-3.5 hover:bg-slate-50 dark:hover:bg-slate-700/50 flex items-center justify-between group transition-colors"
+                    className="w-full text-left px-md py-3 hover:bg-surface-soft flex items-center justify-between group transition-colors border-b border-hairline/40 last:border-b-0"
                   >
                     <div>
-                      <p className="text-sm font-bold text-slate-800 dark:text-slate-100 group-hover:text-amber-600 dark:group-hover:text-amber-400">
+                      <p className="text-caption font-semibold text-ink group-hover:text-link transition-colors">
                         {model.name}
                       </p>
-                      <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider mt-0.5">
+                      <p className="text-[10px] text-muted font-semibold uppercase tracking-wider mt-0.5">
                         {model.brand} • {model.type === 'matic' ? 'Matic' : 'Manual'}
                       </p>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-amber-500 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-muted group-hover:text-link transition-transform group-hover:translate-x-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="m9 18 6-6-6-6" />
                     </svg>
                   </button>
                 ))
               ) : (
-                <div className="px-4 py-8 text-center bg-slate-50/50 dark:bg-slate-900/50">
-                  <p className="text-sm font-bold text-slate-400 dark:text-slate-600">Motor tidak ditemukan 😅</p>
-                  <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1 uppercase tracking-widest font-bold">Coba kata kunci lain</p>
+                <div className="px-md py-6 text-center bg-surface-soft">
+                  <p className="text-body-md font-semibold text-muted">Motor tidak ditemukan 😅</p>
+                  <p className="text-[10px] text-muted/70 mt-1 uppercase tracking-widest font-bold">Coba kata kunci lain</p>
                 </div>
               )}
             </div>
@@ -163,13 +162,13 @@ export default function InputForm({ onSubmit }) {
       </div>
 
       {/* Odometer Input */}
-      <div className="space-y-2">
-        <label htmlFor="odometer" className="block text-sm font-bold text-slate-700 dark:text-slate-200">
+      <div className="space-y-xs">
+        <label htmlFor="odometer" className="block text-caption font-semibold text-ink">
           Kilometer Saat Ini (KM)
         </label>
         <div className="relative">
-          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-slate-400 dark:text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
               <path d="M12 12l4-3" />
             </svg>
@@ -181,36 +180,30 @@ export default function InputForm({ onSubmit }) {
             value={km}
             onChange={handleKmChange}
             placeholder="Contoh: 12.000"
-            className={`w-full pl-12 pr-14 py-4 bg-white dark:bg-slate-800 border-2 rounded-2xl text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-600 
-              focus:outline-none focus:ring-4 focus:ring-amber-500/10 focus:border-amber-500 
-              transition-all duration-300 shadow-sm
-              ${error ? 'border-red-500/60' : 'border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-500'}
+            className={`text-input pl-10 pr-12 font-sans
+              ${error ? 'border-signature-coral/60 focus:border-signature-coral' : 'border-hairline hover:border-hairline-strong'}
               ${isShaking ? 'animate-shake' : ''}`}
           />
-          <span className="absolute inset-y-0 right-0 pr-4 flex items-center text-sm text-slate-400 dark:text-slate-500 font-black">
+          <span className="absolute inset-y-0 right-0 pr-4 flex items-center text-caption text-muted font-bold">
             KM
           </span>
         </div>
       </div>
 
-      {/* Error Message */}
+      {/* Error Message - Sobriety & Brand-voltage Contrast */}
       {error && (
-        <div className="flex items-start gap-2 p-4 bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 rounded-2xl animate-fade-in-up shadow-sm shadow-red-500/5">
-          <svg className="w-5 h-5 text-red-500 dark:text-red-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <div className="flex items-start gap-xs p-md bg-signature-coral/5 border border-signature-coral/20 rounded-sm animate-fade-in-up shadow-sm">
+          <svg className="w-4 h-4 text-signature-coral mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
           </svg>
-          <p className="text-sm text-red-700 dark:text-red-300 font-bold leading-tight">{error}</p>
+          <p className="text-body-md text-signature-coral font-semibold leading-tight">{error}</p>
         </div>
       )}
 
-      {/* Submit Button */}
+      {/* Submit Button - Confident and Final CTA */}
       <button
         type="submit"
-        className="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 
-          text-white dark:text-slate-900 font-black text-base rounded-2xl 
-          shadow-lg shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/40
-          transform hover:scale-[1.01] active:scale-[0.98]
-          transition-all duration-300 cursor-pointer"
+        className="w-full btn-primary tracking-wide transform active:scale-[0.98] transition-all"
       >
         Cek Kebutuhan Servis
       </button>

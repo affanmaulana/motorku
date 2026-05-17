@@ -117,59 +117,65 @@ export default function MotorDetail() {
 
   if (loading) {
     return (
-      <div className="max-w-lg mx-auto px-4 py-16 flex flex-col items-center justify-center gap-4">
-        <div className="w-12 h-12 rounded-full border-4 border-slate-200 dark:border-slate-700 border-t-amber-400 animate-spin"></div>
-        <p className="text-sm text-slate-500 dark:text-slate-400">Menganalisis spesifikasi {motorInfo?.modelName}...</p>
+      <div className="max-w-lg mx-auto px-lg py-xl flex flex-col items-center justify-center gap-md">
+        <div className="w-10 h-10 rounded-full border-4 border-hairline border-t-primary animate-spin"></div>
+        <p className="text-body-md text-muted font-medium">Menganalisis spesifikasi {motorInfo?.modelName}...</p>
       </div>
     )
   }
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-8">
+    <div className="max-w-lg mx-auto px-lg py-xl">
       {/* Summary Header */}
-      <div className="mb-6 animate-fade-in-up">
+      <div className="mb-lg animate-fade-in-up">
         <button
           onClick={handleReset}
-          className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300 mb-4 group cursor-pointer font-medium"
+          className="flex items-center gap-1.5 text-body-md text-muted hover:text-link transition-colors duration-300 mb-md group cursor-pointer font-medium"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/>
           </svg>
           Kembali
         </button>
 
-        <div className="glass rounded-3xl p-5 shadow-lg shadow-slate-200/50 dark:shadow-black/10">
-          <div className="flex items-center justify-between">
+        {/* Editorial Info Card - Combined with Montir Recommendation */}
+        <div className="bg-canvas border border-hairline rounded-md shadow-sm overflow-hidden animate-fade-in-up">
+          <div className="p-lg flex items-center justify-between">
             <div>
-              <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Motor Kamu</p>
-              <h2 className="text-xl font-black text-slate-900 dark:text-slate-100">
+              <p className="text-[10px] text-muted uppercase tracking-widest font-bold mb-0.5">Motor Kamu</p>
+              <h2 className="text-title-lg font-semibold text-ink font-display">
                 {motorInfo?.modelName}
               </h2>
             </div>
             <div className="text-right">
-              <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Odometer</p>
-              <p className="text-xl font-bold gradient-text">
-                {motorInfo?.km.toLocaleString('id-ID')} <span className="text-sm text-slate-500 dark:text-slate-400">KM</span>
+              <p className="text-[10px] text-muted uppercase tracking-widest font-bold mb-0.5">Odometer</p>
+              <p className="text-title-lg font-bold text-signature-coral font-display">
+                {motorInfo?.km.toLocaleString('id-ID')} <span className="text-caption text-muted font-normal">KM</span>
               </p>
             </div>
+          </div>
+
+          <div className="border-t border-hairline"></div>
+
+          <div className="p-lg bg-soft-peach/60 dark:bg-soft-peach/20 border-l-4 border-signature-coral">
+            <span className="text-[9px] font-bold text-signature-coral uppercase tracking-widest block mb-1 font-display">REKOMENDASI MONTIRKU</span>
+            <p className="text-[12.5px] leading-relaxed font-medium text-ink">{result?.human_message}</p>
           </div>
         </div>
       </div>
 
       {/* Results */}
-      <div className="animate-fade-in-up" style={{ animationDelay: '0.15s', opacity: 0 }}>
+      <div className="animate-fade-in-up" style={{ animationDelay: '0.08s', opacity: 0 }}>
         <ResultCard data={result} onTaskAction={handleTaskAction} />
       </div>
 
-      {/* Reset Button */}
-      <div className="mt-8 animate-fade-in-up" style={{ animationDelay: '0.3s', opacity: 0 }}>
+      {/* Reset Button - White outline button */}
+      <div className="mt-xl animate-fade-in-up" style={{ animationDelay: '0.16s', opacity: 0 }}>
         <button
           onClick={handleReset}
-          className="w-full py-4 bg-white dark:bg-slate-800/80 border-2 border-slate-200 dark:border-slate-700 hover:border-amber-400/50 hover:bg-amber-400/5 
-            text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-300 font-bold text-sm rounded-2xl 
-            shadow-sm transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
+          className="w-full btn-secondary flex items-center justify-center gap-xs cursor-pointer active:scale-[0.98] transition-all"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
           </svg>
           Ganti Motor Lain

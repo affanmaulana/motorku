@@ -1,116 +1,190 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Inter+Tight:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Light Mode (Default) */
-  --primary: #f8fafc;
-  --primary-rgb: 248, 250, 252;
-  --surface: #ffffff;
-  --surface-rgb: 255, 255, 255;
-  --surface-light: #f1f5f9;
-  --text-primary: #0f172a;
-  --text-secondary: #64748b;
-  --border-color: rgba(148, 163, 184, 0.2);
+  /* Editorial Light Mode Design System (from design.md) */
+  --color-primary: #181d26;
+  --color-primary-active: #0d1218;
+  --color-ink: #181d26;
+  --color-body: #333840;
+  --color-muted: #41454d;
+  --color-hairline: #dddddd;
+  --color-border-strong: #9297a0;
+  --color-canvas: #ffffff;
+  --color-surface-soft: #f8fafc;
+  --color-surface-strong: #e0e2e6;
+  --color-surface-dark: #181d26;
+  --color-surface-dark-elevated: #1d1f25;
+  --color-on-primary: #ffffff;
+  --color-on-dark: #ffffff;
+  --color-link: #1b61c9;
+  --color-link-active: #1a3866;
   
-  --accent: #f59e0b;
-  --accent-hover: #d97706;
-  --success: #16a34a;
-  --warning: #d97706;
-  --danger: #dc2626;
-  --info: #2563eb;
+  --color-signature-coral: #aa2d00;
+  --color-signature-forest: #0a2e0e;
+  --color-signature-cream: #f5e9d4;
+  --color-signature-peach: #fcab79;
+  --color-signature-mint: #a8d8c4;
+  --color-signature-yellow: #f4d35e;
+  --color-signature-mustard: #d9a441;
+
+  --color-bg-soft-coral: #fff5f5;
+  --color-bg-soft-mint: #f0fbf7;
+  --color-bg-soft-peach: #fffaf5;
+  
+  --color-info: #254fad;
+  --color-info-border: #458fff;
+  --color-success: #006400;
+  --color-success-border: #39bf45;
+  --color-pricing-ink: #1d1f25;
 }
 
 .dark {
-  /* Dark Mode */
-  --primary: #0f172a;
-  --primary-rgb: 15, 23, 42;
-  --surface: #1e293b;
-  --surface-rgb: 30, 41, 59;
-  --surface-light: #334155;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --border-color: rgba(148, 163, 184, 0.12);
+  /* Editorial Dark Mode Shift */
+  --color-primary: #ffffff;
+  --color-primary-active: #dddddd;
+  --color-ink: #ffffff;
+  --color-body: #e0e2e6;
+  --color-muted: #9297a0;
+  --color-hairline: #222936;
+  --color-border-strong: #3f4a5c;
+  --color-canvas: #0f1319;
+  --color-surface-soft: #161c24;
+  --color-surface-strong: #222936;
+  --color-surface-dark: #161c24;
+  --color-surface-dark-elevated: #0f1319;
+  --color-on-primary: #0f1319;
+  --color-on-dark: #ffffff;
+  --color-link: #5fa4ff;
+  --color-link-active: #ffffff;
+
+  /* Gorgeous, high-contrast jewel pastel brand colors in Dark Mode */
+  --color-signature-coral: #ff6b54;
+  --color-signature-forest: #1ea32a;
+  --color-signature-cream: #28211a; /* Rich dark-espresso warm tone */
+  --color-signature-peach: #ffb68c;
+  --color-signature-mint: #86deb6;
+  --color-signature-yellow: #ffd966;
+  --color-signature-mustard: #e6b85c;
+
+  /* Vibrant but desaturated soft background gem blocks in Dark Mode */
+  --color-bg-soft-coral: #221211;
+  --color-bg-soft-mint: #0b1a15;
+  --color-bg-soft-peach: #221712;
+  
+  --color-info: #5fa4ff;
+  --color-info-border: #2b5cb3;
+  --color-success: #4ade80;
+  --color-success-border: #166534;
+  --color-pricing-ink: #ffffff;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  body {
+    @apply bg-canvas text-body font-sans antialiased transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-ink font-display font-medium tracking-tight;
+  }
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--primary);
-  color: var(--text-primary);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease, color 0.3s ease;
+@layer components {
+  /* Button Primary - Confident and Final (from design.md) */
+  .btn-primary {
+    @apply bg-primary text-on-primary font-sans text-button py-4 px-6 rounded-lg inline-block text-center transition-colors hover:bg-primary-active active:bg-primary-active font-semibold cursor-pointer shadow-sm;
+  }
+  
+  /* Button Secondary - Hairline Outline (from design.md) */
+  .btn-secondary {
+    @apply bg-canvas text-ink font-sans text-button border border-hairline py-4 px-6 rounded-lg inline-block text-center transition-colors hover:bg-surface-soft active:bg-surface-strong font-semibold cursor-pointer shadow-sm;
+  }
+
+  /* Button Secondary on Dark Surfaces */
+  .btn-secondary-on-dark {
+    @apply bg-canvas text-ink font-sans text-button py-4 px-6 rounded-lg inline-block text-center transition-colors hover:bg-surface-soft active:bg-surface-strong font-semibold cursor-pointer shadow-sm;
+  }
+
+  /* Text Inputs (from design.md) */
+  .text-input {
+    @apply bg-canvas text-ink text-body-md border border-hairline rounded-sm px-4 py-3 h-[44px] w-full focus:outline-none focus:border-info-border focus:ring-1 focus:ring-info-border transition-all duration-200;
+  }
+
+  /* Brand Signature Cards (editorial highlights) */
+  .signature-coral-card {
+    @apply bg-signature-coral text-on-dark rounded-lg p-xl sm:p-xxl font-sans shadow-sm;
+  }
+
+  .signature-forest-card {
+    @apply bg-signature-forest text-on-dark rounded-lg p-xl sm:p-xxl font-sans shadow-sm;
+  }
+
+  .hero-card-dark {
+    @apply bg-surface-dark text-on-dark rounded-lg p-xl sm:p-xxl font-sans shadow-sm;
+  }
+
+  .cream-callout-card {
+    @apply bg-signature-cream text-ink rounded-md p-lg font-sans shadow-sm;
+  }
+
+  .demo-grid-card {
+    @apply bg-canvas text-ink border border-hairline rounded-md p-md font-sans shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+
+  .btn-pill {
+    @apply bg-canvas text-ink border border-hairline text-caption rounded-pill px-4 h-[36px] flex items-center justify-center transition-colors hover:bg-surface-soft font-semibold;
+  }
+
+  .btn-icon-circular {
+    @apply bg-canvas text-ink border border-hairline rounded-full w-10 h-10 flex items-center justify-center transition-colors hover:bg-surface-soft;
+  }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--primary);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--surface-light);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
-}
-
-/* Smooth transitions */
-.transition-smooth {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Glass effect */
+/* Structural Glass Effect for Headers (Clean, subtle elevation) */
 .glass {
-  backdrop-filter: blur(24px) saturate(200%);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
-  background: rgba(var(--surface-rgb), 0.85);
-  border: 1px solid var(--border-color);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  background: rgba(var(--color-canvas), 0.85);
+  border-bottom: 1px solid var(--color-hairline);
 }
 
-/* Gradient text */
+.dark .glass {
+  background: rgba(24, 29, 38, 0.85);
+}
+
+/* Editorial gradient style for headers/important status titles */
 .gradient-text {
-  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #f59e0b 100%);
+  background: linear-gradient(135deg, var(--color-signature-coral) 0%, var(--color-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  @apply font-semibold;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, var(--color-signature-peach) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Pulse glow animation */
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.1); }
-  50% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.2); }
-}
-
-.pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-/* Float animation */
+/* Micro-animations for high-fidelity experience */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-6px); }
 }
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
 
-/* Fade in up animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -119,29 +193,55 @@ body {
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.5s ease-out forwards;
 }
 
-/* Staggered animations */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
+.stagger-1 { animation-delay: 0.08s; }
+.stagger-2 { animation-delay: 0.16s; }
+.stagger-3 { animation-delay: 0.24s; }
+.stagger-4 { animation-delay: 0.32s; }
 
-/* Custom shake for validation */
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
 }
+
 .animate-shake {
   animation: shake 0.4s ease-in-out;
-}
-.animate-fade-in {
-  animation: fadeIn 0.3s ease-out forwards;
 }
 
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Custom Scrollbar to match Haas/Airtable clean styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-hairline);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-strong);
+}
+
+.bg-soft-coral {
+  background-color: var(--color-bg-soft-coral) !important;
+}
+.bg-soft-mint {
+  background-color: var(--color-bg-soft-mint) !important;
+}
+.bg-soft-peach {
+  background-color: var(--color-bg-soft-peach) !important;
 }
