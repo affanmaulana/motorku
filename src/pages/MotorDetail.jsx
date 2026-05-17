@@ -65,9 +65,17 @@ export default function MotorDetail() {
           aman.push(item)
         } else if (status === 'not_yet') {
           wajibDikerjakan.push({ ...item, isOverdue: true })
-        } else if (item.due_km && parsed.km > item.due_km) {
-          shouldHaveDone.push(item)
+        } else if (item.due_km) {
+          if (parsed.km > item.due_km) {
+            // Overdue task -> moves to Konfirmasi Service
+            shouldHaveDone.push(item)
+          } else if (parsed.km === item.due_km) {
+            // Exactly due right now -> active must_do
+            wajibDikerjakan.push(item)
+          }
+          // If parsed.km < item.due_km, it's a future task and is hidden from current checklists.
         } else {
+          // No specific due_km defined, always include as active must_do
           wajibDikerjakan.push(item)
         }
       })
