@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { useState, useEffect, lazy, Suspense } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 const Home = lazy(() => import('./pages/Home'))
 const MotorDetail = lazy(() => import('./pages/MotorDetail'))
@@ -98,6 +99,7 @@ function App() {
           </p>
         </div>
       </footer>
+      <Analytics />
     </div>
   )
 }
