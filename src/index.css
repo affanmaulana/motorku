@@ -22,7 +22,7 @@
   --color-on-dark: #ffffff;
   --color-link: #1b61c9;
   --color-link-active: #1a3866;
-  
+
   --color-signature-coral: #aa2d00;
   --color-signature-forest: #0a2e0e;
   --color-signature-cream: #f5e9d4;
@@ -34,7 +34,7 @@
   --color-bg-soft-coral: #fff5f5;
   --color-bg-soft-mint: #f0fbf7;
   --color-bg-soft-peach: #fffaf5;
-  
+
   --color-info: #254fad;
   --color-info-border: #458fff;
   --color-success: #006400;
@@ -64,7 +64,8 @@
   /* Gorgeous, high-contrast jewel pastel brand colors in Dark Mode */
   --color-signature-coral: #ff6b54;
   --color-signature-forest: #1ea32a;
-  --color-signature-cream: #28211a; /* Rich dark-espresso warm tone */
+  --color-signature-cream: #28211a;
+  /* Rich dark-espresso warm tone */
   --color-signature-peach: #ffb68c;
   --color-signature-mint: #86deb6;
   --color-signature-yellow: #ffd966;
@@ -74,7 +75,7 @@
   --color-bg-soft-coral: #221211;
   --color-bg-soft-mint: #0b1a15;
   --color-bg-soft-peach: #221712;
-  
+
   --color-info: #5fa4ff;
   --color-info-border: #2b5cb3;
   --color-success: #4ade80;
@@ -87,17 +88,23 @@
     @apply bg-canvas text-body font-sans antialiased transition-colors duration-300;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply text-ink font-display font-medium tracking-tight;
   }
 }
 
 @layer components {
+
   /* Button Primary - Confident and Final (from design.md) */
   .btn-primary {
     @apply bg-primary text-on-primary font-sans text-button py-4 px-6 rounded-lg inline-block text-center transition-colors hover:bg-primary-active active:bg-primary-active font-semibold cursor-pointer shadow-sm;
   }
-  
+
   /* Button Secondary - Hairline Outline (from design.md) */
   .btn-secondary {
     @apply bg-canvas text-ink font-sans text-button border border-hairline py-4 px-6 rounded-lg inline-block text-center transition-colors hover:bg-surface-soft active:bg-surface-strong font-semibold cursor-pointer shadow-sm;
@@ -169,8 +176,15 @@
 
 /* Micro-animations for high-fidelity experience */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .animate-float {
@@ -182,6 +196,7 @@
     opacity: 0;
     transform: translateY(16px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -192,15 +207,36 @@
   animation: fadeInUp 0.5s ease-out forwards;
 }
 
-.stagger-1 { animation-delay: 0.08s; }
-.stagger-2 { animation-delay: 0.16s; }
-.stagger-3 { animation-delay: 0.24s; }
-.stagger-4 { animation-delay: 0.32s; }
+.stagger-1 {
+  animation-delay: 0.08s;
+}
+
+.stagger-2 {
+  animation-delay: 0.16s;
+}
+
+.stagger-3 {
+  animation-delay: 0.24s;
+}
+
+.stagger-4 {
+  animation-delay: 0.32s;
+}
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-4px); }
-  75% { transform: translateX(4px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-4px);
+  }
+
+  75% {
+    transform: translateX(4px);
+  }
 }
 
 .animate-shake {
@@ -208,8 +244,13 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .animate-fade-in {
@@ -221,13 +262,16 @@
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--color-canvas);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-hairline);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-border-strong);
 }
@@ -235,9 +279,11 @@
 .bg-soft-coral {
   background-color: var(--color-bg-soft-coral) !important;
 }
+
 .bg-soft-mint {
   background-color: var(--color-bg-soft-mint) !important;
 }
+
 .bg-soft-peach {
   background-color: var(--color-bg-soft-peach) !important;
 }
