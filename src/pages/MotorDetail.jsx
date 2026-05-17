@@ -6,37 +6,49 @@ import ResultCard from '../components/ResultCard'
 
 export default function MotorDetail() {
   const navigate = useNavigate()
-  const [result, setResult] = useState(null)
-  const [motorInfo, setMotorInfo] = useState(null)
+  const [motorInfo] = useState(() => {
+    const raw = localStorage.getItem('motorkuData')
+    if (!raw) return null
+    try {
+      const parsed = JSON.parse(raw)
+      const model = motorModels.find(m => m.id === parsed.type)
+      return { ...parsed, modelName: model ? model.name : 'Motor Custom' }
+    } catch {
+      return null
+    }
+  })
   const [loading, setLoading] = useState(true)
   const [taskResponses, setTaskResponses] = useState({})
 
   useEffect(() => {
     window.scrollTo(0, 0)
 
-    const raw = localStorage.getItem('motorkuData')
-
-    if (!raw) {
+    if (!motorInfo) {
       navigate('/', { replace: true })
       return
     }
 
-    const parsed = JSON.parse(raw)
-    const model = motorModels.find(m => m.id === parsed.type)
-    
-    setMotorInfo({ ...parsed, modelName: model ? model.name : 'Motor Custom' })
+    // Simulate brief loading
+    const timer = setTimeout(() => setLoading(false), 600)
+    return () => clearTimeout(timer)
+  }, [navigate, motorInfo])
+
+  // Derive Result during render to avoid cascading updates/effects
+  let result = null
+  if (motorInfo) {
+    const model = motorModels.find(m => m.id === motorInfo.type)
 
     // Filter matching service data based on model_id and KM range
     let match = serviceData.find(
       (entry) =>
-        entry.model_ids.includes(parsed.type) &&
-        parsed.km >= entry.range_km_min &&
-        parsed.km <= entry.range_km_max
+        entry.model_ids.includes(motorInfo.type) &&
+        motorInfo.km >= entry.range_km_min &&
+        motorInfo.km <= entry.range_km_max
     )
 
     // Enhanced Fallback Logic: If no specific model match found
     if (!match) {
-      if (parsed.km > 25000) {
+      if (motorInfo.km > 25000) {
         match = serviceData.find(entry => entry.model_ids.includes('default'))
       } else {
         const segment = model?.segment || 'entry'
@@ -52,7 +64,7 @@ export default function MotorDetail() {
     if (match) {
       // Categorize tasks with model-specific filtering
       const allMustDo = (match.must_do || []).filter(item => 
-        !item.only_for || item.only_for.includes(parsed.type)
+        !item.only_for || item.only_for.includes(motorInfo.type)
       )
       const shouldHaveDone = []
       const wajibDikerjakan = []
@@ -66,35 +78,35 @@ export default function MotorDetail() {
         } else if (status === 'not_yet') {
           wajibDikerjakan.push({ ...item, isOverdue: true })
         } else if (item.due_km) {
-          if (parsed.km > item.due_km) {
+          if (motorInfo.km > item.due_km) {
             // Overdue task -> moves to Konfirmasi Service
             shouldHaveDone.push(item)
-          } else if (parsed.km === item.due_km) {
+          } else if (motorInfo.km === item.due_km) {
             // Exactly due right now -> active must_do
             wajibDikerjakan.push(item)
           }
-          // If parsed.km < item.due_km, it's a future task and is hidden from current checklists.
+          // If motorInfo.km < item.due_km, it's a future task and is hidden from current checklists.
         } else {
           // No specific due_km defined, always include as active must_do
           wajibDikerjakan.push(item)
         }
       })
 
-      setResult({ 
+      result = { 
         ...match, 
         motor_type: model?.type || 'matic',
         should_have_done: shouldHaveDone,
         must_do: wajibDikerjakan,
         aman: aman,
         check: (match.check || []).filter(item => 
-          !item.only_for || item.only_for.includes(parsed.type)
+          !item.only_for || item.only_for.includes(motorInfo.type)
         )
-      })
+      }
     } else {
       // Final absolute fallback
-      setResult({
+      result = {
         range_km_min: 0,
-        range_km_max: parsed.km,
+        range_km_max: motorInfo.km,
         motor_type: model?.type || 'matic',
         should_have_done: [],
         must_do: [
@@ -104,12 +116,9 @@ export default function MotorDetail() {
         aman: [],
         check: ["Tekanan Ban", "Aki", "Lampu", "Rem"],
         human_message: `Saran servis spesifik untuk ${model?.name || 'motor ini'} sedang kami siapkan. Sebagai langkah aman, pastikan ganti oli rutin dan cek fungsi rem ya!`
-      })
+      }
     }
-
-    // Simulate brief loading
-    setTimeout(() => setLoading(false), 600)
-  }, [navigate, taskResponses])
+  }
 
   const handleTaskAction = (taskName, action) => {
     setTaskResponses(prev => ({

@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import Home from './pages/Home'
-import MotorDetail from './pages/MotorDetail'
+import { useState, useEffect, lazy, Suspense } from 'react'
+
+const Home = lazy(() => import('./pages/Home'))
+const MotorDetail = lazy(() => import('./pages/MotorDetail'))
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -74,10 +75,16 @@ function App() {
 
       {/* Main Content */}
       <main className="flex-1">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/detail" element={<MotorDetail />} />
-        </Routes>
+        <Suspense fallback={
+          <div className="max-w-lg mx-auto px-lg py-xl flex flex-col items-center justify-center gap-md">
+            <div className="w-10 h-10 rounded-full border-4 border-hairline border-t-primary animate-spin"></div>
+          </div>
+        }>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/detail" element={<MotorDetail />} />
+          </Routes>
+        </Suspense>
       </main>
 
       {/* Footer - Minimal Editorial style */}

@@ -18,9 +18,9 @@ export default function Home() {
           <span className="text-caption font-semibold uppercase tracking-wider text-muted">Panduan Servis Gratis</span>
         </div>
         <h2 className="text-display-md text-ink mb-sm leading-tight font-display font-medium">
-          Kapan Terakhir
+          Servis Motor,
           <br />
-          <span className="gradient-text font-semibold">Servis Motor?</span>
+          <span className="gradient-text font-semibold">Servis Apanya?</span>
         </h2>
         <p className="text-body-md text-muted max-w-sm mx-auto leading-relaxed">
           Masukkan data motor kamu, dan kami kasih tau apa saja yang perlu diservis.
