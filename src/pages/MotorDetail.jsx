@@ -3,9 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import serviceData from '../data/serviceData.json'
 import motorModels from '../data/motorModels.json'
 import ResultCard from '../components/ResultCard'
+import MaintenanceGuideModal from '../components/MaintenanceGuideModal'
+
 
 export default function MotorDetail() {
   const navigate = useNavigate()
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const [motorInfo] = useState(() => {
     const raw = localStorage.getItem('motorkuData')
     if (!raw) return null
@@ -62,33 +65,110 @@ export default function MotorDetail() {
     }
 
     if (match) {
-      // Categorize tasks with model-specific filtering
-      const allMustDo = (match.must_do || []).filter(item => 
-        !item.only_for || item.only_for.includes(motorInfo.type)
-      )
+      // 1. Gather all must_do tasks that apply to this motor model across ALL database entries
+      const allAppliedEntries = serviceData.filter(entry => entry.model_ids.includes(motorInfo.type))
+      const combinedMustDo = []
+      
+      allAppliedEntries.forEach(entry => {
+        if (entry.must_do) {
+          entry.must_do.forEach(item => {
+            if (!item.only_for || item.only_for.includes(motorInfo.type)) {
+              if (!combinedMustDo.some(t => t.task === item.task)) {
+                combinedMustDo.push(item)
+              }
+            }
+          })
+        }
+      })
+
+      // Also gather high-KM must_do tasks if user's KM > 25000
+      if (motorInfo.km > 25000) {
+        const globalEntry = serviceData.find(entry => entry.model_ids.includes('default'))
+        if (globalEntry && globalEntry.must_do) {
+          globalEntry.must_do.forEach(item => {
+            if (!combinedMustDo.some(t => t.task === item.task)) {
+              combinedMustDo.push(item)
+            }
+          })
+        }
+      }
+
+      // If combinedMustDo is completely empty, use the match must_do as fallback
+      if (combinedMustDo.length === 0 && match.must_do) {
+        match.must_do.forEach(item => {
+          if (!item.only_for || item.only_for.includes(motorInfo.type)) {
+            combinedMustDo.push(item)
+          }
+        })
+      }
+
+      // 2. Classify tasks based on periodic calculations with 20% leeway
       const shouldHaveDone = []
       const wajibDikerjakan = []
       const aman = []
 
-      allMustDo.forEach(item => {
+      combinedMustDo.forEach(item => {
         const status = taskResponses[item.task]
         
         if (status === 'done') {
           aman.push(item)
-        } else if (status === 'not_yet') {
+          return
+        }
+        
+        if (status === 'not_yet') {
           wajibDikerjakan.push({ ...item, isOverdue: true })
-        } else if (item.due_km) {
-          if (motorInfo.km > item.due_km) {
-            // Overdue task -> moves to Konfirmasi Service
-            shouldHaveDone.push(item)
-          } else if (motorInfo.km === item.due_km) {
-            // Exactly due right now -> active must_do
+          return
+        }
+
+        // Parse interval from due_km or text description
+        let I = item.due_km
+        if (!I && item.interval) {
+          const cleanInterval = item.interval.replace(/\./g, '')
+          const keyMatch = cleanInterval.match(/(\d+)\s*km/i)
+          if (keyMatch) {
+            I = parseInt(keyMatch[1], 10)
+          }
+        }
+
+        if (!I || isNaN(I)) {
+          // No specific interval defined, always include as active must_do
+          wajibDikerjakan.push(item)
+          return
+        }
+
+        const userKm = motorInfo.km
+
+        if (I === 1000 || item.interval.toLowerCase().includes('pertama')) {
+          // First break-in service
+          if (userKm >= 1000 && userKm <= 1200) {
+            if (userKm === 1000) {
+              wajibDikerjakan.push(item)
+            } else {
+              shouldHaveDone.push(item)
+            }
+          }
+          return
+        }
+
+        // Periodic recurring service matching
+        const multiple = Math.floor(userKm / I) * I
+        
+        if (multiple > 0) {
+          const diff = userKm - multiple
+          const allowedDiff = 0.2 * I // 20% of interval leeway
+          
+          if (diff >= 0 && diff <= allowedDiff) {
+            if (diff === 0) {
+              wajibDikerjakan.push(item)
+            } else {
+              shouldHaveDone.push(item)
+            }
+          }
+        } else {
+          // Below first interval, check if exactly at interval
+          if (userKm === I) {
             wajibDikerjakan.push(item)
           }
-          // If motorInfo.km < item.due_km, it's a future task and is hidden from current checklists.
-        } else {
-          // No specific due_km defined, always include as active must_do
-          wajibDikerjakan.push(item)
         }
       })
 
@@ -186,18 +266,38 @@ export default function MotorDetail() {
         <ResultCard data={result} onTaskAction={handleTaskAction} />
       </div>
 
-      {/* Reset Button - White outline button */}
-      <div className="mt-xl animate-fade-in-up" style={{ animationDelay: '0.16s', opacity: 0 }}>
+      {/* Maintenance Guide Button & Reset Button */}
+      <div className="mt-xl flex flex-col gap-sm animate-fade-in-up" style={{ animationDelay: '0.16s', opacity: 0 }}>
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="w-full btn-primary flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98] transition-all py-3.5 px-4 font-semibold text-sm rounded-lg"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+            <path d="M6 6h10M6 10h10"/>
+          </svg>
+          Panduan Perawatan Lengkap
+        </button>
+
         <button
           onClick={handleReset}
-          className="w-full btn-secondary flex items-center justify-center gap-xs cursor-pointer active:scale-[0.98] transition-all"
+          className="w-full btn-secondary flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98] transition-all py-3.5 px-4 font-semibold text-sm rounded-lg"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
           </svg>
           Ganti Motor Lain
         </button>
       </div>
+
+      {/* Complete Maintenance Guide Modal */}
+      {motorInfo && (
+        <MaintenanceGuideModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          motorId={motorInfo.type}
+        />
+      )}
     </div>
   )
 }
