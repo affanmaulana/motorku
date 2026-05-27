@@ -140,7 +140,10 @@ export default function MotorDetail() {
 
         if (I === 1000 || item.interval.toLowerCase().includes('pertama')) {
           // First break-in service
-          if (userKm >= 1000 && userKm <= 1200) {
+          // Before window (25% of 1000): 750 <= userKm < 1000
+          // Exactly due: userKm === 1000
+          // After window (20% of 1000): 1000 < userKm <= 1200
+          if (userKm >= 750 && userKm <= 1200) {
             if (userKm === 1000) {
               wajibDikerjakan.push(item)
             } else {
@@ -150,25 +153,18 @@ export default function MotorDetail() {
           return
         }
 
-        // Periodic recurring service matching
-        const multiple = Math.floor(userKm / I) * I
+        // Periodic recurring service matching with 25% before and 20% after leeway
+        const M = Math.max(I, Math.round(userKm / I) * I)
+        const d = userKm - M
+        const beforeLeeway = -0.25 * I
+        const afterLeeway = 0.2 * I
         
-        if (multiple > 0) {
-          const diff = userKm - multiple
-          const allowedDiff = 0.2 * I // 20% of interval leeway
-          
-          if (diff >= 0 && diff <= allowedDiff) {
-            if (diff === 0) {
-              wajibDikerjakan.push(item)
-            } else {
-              shouldHaveDone.push(item)
-            }
-          }
-        } else {
-          // Below first interval, check if exactly at interval
-          if (userKm === I) {
-            wajibDikerjakan.push(item)
-          }
+        if (d === 0) {
+          wajibDikerjakan.push(item)
+        } else if (d > 0 && d <= afterLeeway) {
+          shouldHaveDone.push(item)
+        } else if (d < 0 && d >= beforeLeeway) {
+          shouldHaveDone.push(item)
         }
       })
 

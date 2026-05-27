@@ -1,7 +1,10 @@
 [
   {
     "id": "honda-beat-vbelt-special",
-    "model_ids": ["honda-beat-110", "honda-scoopy"],
+    "model_ids": [
+      "honda-beat-110",
+      "honda-scoopy"
+    ],
     "range_km_min": 18000,
     "range_km_max": 22000,
     "must_do": [
@@ -12,8 +15,14 @@
       }
     ],
     "check": [
-      { "task": "Roller Condition", "desc": "Cek apakah roller sudah peang/tidak bulat. Roller peang menyebabkan akselerasi bergetar." },
-      { "task": "Rumah Roller", "desc": "Cek keausan jalur roller. Jika sudah termakan, gerakan roller tidak akan mulus." }
+      {
+        "task": "Roller Condition",
+        "desc": "Cek apakah roller sudah peang/tidak bulat. Roller peang menyebabkan akselerasi bergetar."
+      },
+      {
+        "task": "Rumah Roller",
+        "desc": "Cek keausan jalur roller. Jika sudah termakan, gerakan roller tidak akan mulus."
+      }
     ],
     "human_message": "Berdasarkan data empiris, V-Belt motor 110cc seringkali lebih cepat aus di kondisi macet. Sebaiknya ganti di 20.000 km untuk keamanan."
   },
@@ -25,8 +34,7 @@
       "yamaha-mio-m3",
       "yamaha-gear-125",
       "yamaha-fazzio",
-      "yamaha-grand-filano",
-      "suzuki-nex-ii"
+      "yamaha-grand-filano"
     ],
     "range_km_min": 0,
     "range_km_max": 4000,
@@ -38,10 +46,26 @@
       }
     ],
     "check": [
-      { "task": "Tekanan Ban", "desc": "Tekanan kurang membuat ban cepat botak dan konsumsi BBM boros." },
-      { "task": "Rem Depan/Belakang", "desc": "Penting untuk memastikan ketebalan kampas rem masih aman untuk menghindari rem blong." },
-      { "task": "Lampu & Sinyal", "desc": "Cek lampu utama, rem, dan sein untuk keselamatan berkendara terutama di malam hari." },
-      { "task": "Tegangan Aki (Hybrid)", "desc": "Sistem Hybrid butuh aki >12.4V. Jika di bawah itu, assist tidak akan aktif.", "only_for": ["yamaha-fazzio", "yamaha-grand-filano"] }
+      {
+        "task": "Tekanan Ban",
+        "desc": "Tekanan kurang membuat ban cepat botak dan konsumsi BBM boros."
+      },
+      {
+        "task": "Rem Depan/Belakang",
+        "desc": "Penting untuk memastikan ketebalan kampas rem masih aman untuk menghindari rem blong."
+      },
+      {
+        "task": "Lampu & Sinyal",
+        "desc": "Cek lampu utama, rem, dan sein untuk keselamatan berkendara terutama di malam hari."
+      },
+      {
+        "task": "Tegangan Aki (Hybrid)",
+        "desc": "Sistem Hybrid butuh aki >12.4V. Jika di bawah itu, assist tidak akan aktif.",
+        "only_for": [
+          "yamaha-fazzio",
+          "yamaha-grand-filano"
+        ]
+      }
     ],
     "human_message": "Motor baru! Ganti oli mesin di 1.000 km pertama. Catatan: BeAT/Scoopy 2024+ hanya butuh 650ml oli. Motor kamu berpendingin udara, jaga sirip mesin tetap bersih."
   },
@@ -53,8 +77,7 @@
       "yamaha-mio-m3",
       "yamaha-gear-125",
       "yamaha-fazzio",
-      "yamaha-grand-filano",
-      "suzuki-nex-ii"
+      "yamaha-grand-filano"
     ],
     "range_km_min": 4001,
     "range_km_max": 20000,
@@ -63,13 +86,21 @@
         "task": "Ganti Oli Mesin (Setiap 2.000 km)",
         "interval": "Setiap 2.000 km",
         "due_km": 2000,
-        "only_for": ["honda-beat-110", "honda-scoopy"]
+        "only_for": [
+          "honda-beat-110",
+          "honda-scoopy"
+        ]
       },
       {
         "task": "Ganti Oli Mesin (Setiap 3.000 km)",
         "interval": "Setiap 3.000 km",
         "due_km": 3000,
-        "only_for": ["yamaha-mio-m3", "yamaha-gear-125", "yamaha-fazzio", "yamaha-grand-filano", "suzuki-nex-ii"]
+        "only_for": [
+          "yamaha-mio-m3",
+          "yamaha-gear-125",
+          "yamaha-fazzio",
+          "yamaha-grand-filano"
+        ]
       },
       {
         "task": "Ganti Oli Gardan",
@@ -85,14 +116,29 @@
         "task": "Cek Tegangan Aki (Hybrid Assist)",
         "interval": "Setiap 6 Bulan / 6.000 KM",
         "due_km": 6000,
-        "only_for": ["yamaha-fazzio", "yamaha-grand-filano"]
+        "only_for": [
+          "yamaha-fazzio",
+          "yamaha-grand-filano"
+        ]
       }
     ],
     "check": [
-      { "task": "Filter Udara (Viskos)", "desc": "Filter viskos mengandung oli. Jangan disemprot angin karena merusak pori-pori kertas." },
-      { "task": "Kampas Rem", "desc": "Cek ketebalan kampas. Jika sisa <2mm, daya pengereman akan menurun drastis." },
-      { "task": "Busi", "desc": "Busi yang sudah hitam atau renggang menyebabkan motor susah starter and boros bensin." },
-      { "task": "V-Belt Condition", "desc": "Cek keretakan pada gerigi sabuk. V-belt putus bisa merusak komponen internal CVT." }
+      {
+        "task": "Filter Udara (Viskos)",
+        "desc": "Filter viskos mengandung oli. Jangan disemprot angin karena merusak pori-pori kertas."
+      },
+      {
+        "task": "Kampas Rem",
+        "desc": "Cek ketebalan kampas. Jika sisa <2mm, daya pengereman akan menurun drastis."
+      },
+      {
+        "task": "Busi",
+        "desc": "Busi yang sudah hitam atau renggang menyebabkan motor susah starter and boros bensin."
+      },
+      {
+        "task": "V-Belt Condition",
+        "desc": "Cek keretakan pada gerigi sabuk. V-belt putus bisa merusak komponen internal CVT."
+      }
     ],
     "human_message": "Jaga rutinitas ganti oli. BeAT/Scoopy 2024 wajib ganti tiap 2.000 km karena kapasitas hanya 650ml. Suzuki Nex II (650ml). Fazzio/Filano (Aki >12.4V). Jangan simpan remote dekat motor."
   },
@@ -109,13 +155,17 @@
         "task": "Ganti Oli Mesin (Setiap 4.000 km)",
         "interval": "Setiap 4.000 km",
         "due_km": 4000,
-        "only_for": ["honda-vario-125"]
+        "only_for": [
+          "honda-vario-125"
+        ]
       },
       {
         "task": "Ganti Oli Mesin (Setiap 3.000 km)",
         "interval": "Setiap 3.000 km",
         "due_km": 3000,
-        "only_for": ["yamaha-lexi-125"]
+        "only_for": [
+          "yamaha-lexi-125"
+        ]
       },
       {
         "task": "Cek/Tambah Air Radiator",
@@ -129,9 +179,18 @@
       }
     ],
     "check": [
-      { "task": "Kebocoran Radiator", "desc": "Cek rembesan coolant di selang atau kisi-kisi. Kurangnya cairan memicu overheat." },
-      { "task": "Kampas Rem", "desc": "Pastikan indikator keausan pada kampas rem belum menyentuh piringan cakram." },
-      { "task": "Busi", "desc": "Kinerja pengapian optimal menjaga efisiensi bensin dan tarikan mesin tetap enteng." }
+      {
+        "task": "Kebocoran Radiator",
+        "desc": "Cek rembesan coolant di selang atau kisi-kisi. Kurangnya cairan memicu overheat."
+      },
+      {
+        "task": "Kampas Rem",
+        "desc": "Pastikan indikator keausan pada kampas rem belum menyentuh piringan cakram."
+      },
+      {
+        "task": "Busi",
+        "desc": "Kinerja pengapian optimal menjaga efisiensi bensin dan tarikan mesin tetap enteng."
+      }
     ],
     "human_message": "Motor liquid-cooled butuh pengecekan air radiator. Gunakan oli 800ml untuk Vario 125 dan 900ml untuk Lexi 125."
   },
@@ -151,25 +210,39 @@
         "task": "Ganti Oli Mesin (Honda 160cc)",
         "interval": "Setiap 6.000 km",
         "due_km": 6000,
-        "only_for": ["honda-vario-160", "honda-pcx-160", "honda-adv-160"]
+        "only_for": [
+          "honda-vario-160",
+          "honda-pcx-160",
+          "honda-adv-160"
+        ]
       },
       {
         "task": "Ganti Oli Mesin (Yamaha 155cc)",
         "interval": "Setiap 3.000 km",
         "due_km": 3000,
-        "only_for": ["yamaha-nmax-155", "yamaha-aerox-155"]
+        "only_for": [
+          "yamaha-nmax-155",
+          "yamaha-aerox-155"
+        ]
       },
       {
         "task": "Penyetelan Klep (Valve Clearance) - Yamaha VVA",
         "interval": "Wajib setiap 8.000 KM (Efek VVA)",
         "due_km": 8000,
-        "only_for": ["yamaha-nmax-155", "yamaha-aerox-155"]
+        "only_for": [
+          "yamaha-nmax-155",
+          "yamaha-aerox-155"
+        ]
       },
       {
         "task": "Penyetelan Klep (Valve Clearance) - Honda 160cc",
         "interval": "Pengecekan per 12.000-20.000 KM",
         "due_km": 12000,
-        "only_for": ["honda-vario-160", "honda-pcx-160", "honda-adv-160"]
+        "only_for": [
+          "honda-vario-160",
+          "honda-pcx-160",
+          "honda-adv-160"
+        ]
       },
       {
         "task": "Cek/Tambah Air Radiator",
@@ -183,9 +256,18 @@
       }
     ],
     "check": [
-      { "task": "Fungsi Kipas Radiator", "desc": "Kipas harus berputar otomatis saat suhu tinggi. Jika mati, mesin akan overheat di kemacetan." },
-      { "task": "Kampas Rem", "desc": "Cek ketebalan kampas rem visual di setiap siklus 4.000 km." },
-      { "task": "V-Belt", "desc": "Cek keretakan pada gerigi sabuk. V-belt putus bisa merusak komponen internal CVT." }
+      {
+        "task": "Fungsi Kipas Radiator",
+        "desc": "Kipas harus berputar otomatis saat suhu tinggi. Jika mati, mesin akan overheat di kemacetan."
+      },
+      {
+        "task": "Kampas Rem",
+        "desc": "Cek ketebalan kampas rem visual di setiap siklus 4.000 km."
+      },
+      {
+        "task": "V-Belt",
+        "desc": "Cek keretakan pada gerigi sabuk. V-belt putus bisa merusak komponen internal CVT."
+      }
     ],
     "human_message": "Buku servis Honda 160cc menyarankan ganti oli per 6.000 km (800ml / 850ml jika kuras strainer) dengan busi NGK LMAR8L-9. Yamaha 155cc (NMAX/Aerox) disarankan ganti per 3.000 km (900ml) dengan busi NGK CPR8EA-9. Untuk kemacetan ekstrem, ganti oli setiap 2.000-2.500 km."
   },
@@ -210,7 +292,10 @@
       }
     ],
     "check": [
-      { "task": "Responsibilitas Remote", "desc": "Jika jarak deteksi berkurang atau lampu indikator remote redup, segera ganti baterai." }
+      {
+        "task": "Responsibilitas Remote",
+        "desc": "Jika jarak deteksi berkurang atau lampu indikator remote redup, segera ganti baterai."
+      }
     ],
     "human_message": "Baterai remote keyless (CR 2032) biasanya melemah setelah 2 tahun. Ganti sekarang untuk menghindari remote mati mendadak."
   },
@@ -240,9 +325,18 @@
       }
     ],
     "check": [
-      { "task": "Selang Radiator", "desc": "Cek apakah selang sudah keras atau retak untuk mencegah kebocoran coolant." },
-      { "task": "Water Pump", "desc": "Cek lubang indikator (weep hole). Jika ada rembesan, seal water pump harus diganti." },
-      { "task": "Ketebalan Kampas Rem", "desc": "Kampas rem matic lebih cepat habis karena minim engine brake." }
+      {
+        "task": "Selang Radiator",
+        "desc": "Cek apakah selang sudah keras atau retak untuk mencegah kebocoran coolant."
+      },
+      {
+        "task": "Water Pump",
+        "desc": "Cek lubang indikator (weep hole). Jika ada rembesan, seal water pump harus diganti."
+      },
+      {
+        "task": "Ketebalan Kampas Rem",
+        "desc": "Kampas rem matic lebih cepat habis karena minim engine brake."
+      }
     ],
     "human_message": "Di iklim tropis, kualitas coolant dan minyak rem lebih cepat menurun (higroskopis). Ganti rutin untuk menjaga performa pengereman dan suhu mesin."
   },
@@ -253,8 +347,7 @@
       "honda-revo",
       "honda-crf150l",
       "yamaha-vixion",
-      "yamaha-r15",
-      "suzuki-satria-f150"
+      "yamaha-r15"
     ],
     "range_km_min": 0,
     "range_km_max": 25000,
@@ -286,65 +379,349 @@
       }
     ],
     "check": [
-      { "task": "Kopling", "desc": "Pastikan kabel kopling tidak kaku and perpindahan gigi tetap halus." },
-      { "task": "Filter Udara", "desc": "Filter kotor menyumbat asupan udara, membuat motor 'ngempos' dan boros bensin." }
+      {
+        "task": "Kopling",
+        "desc": "Pastikan kabel kopling tidak kaku and perpindahan gigi tetap halus."
+      },
+      {
+        "task": "Filter Udara",
+        "desc": "Filter kotor menyumbat asupan udara, membuat motor 'ngempos' dan boros bensin."
+      }
     ],
     "human_message": "Untuk Suzuki Satria F150 FI, lakukan servis besar di 20.000 km (Busi: NGK MR8E-9). Jaga rantai tetap bersih dan terlumasi agar tidak berisik."
   },
   {
-    "id": "matic-entry-fallback",
-    "model_ids": ["matic-entry-fallback"],
+    "id": "spark-plug-replacement-entry-matic",
+    "model_ids": [
+      "honda-beat-110",
+      "honda-scoopy",
+      "suzuki-nex-ii",
+      "yamaha-mio-m3",
+      "yamaha-gear-125",
+      "yamaha-fazzio",
+      "yamaha-grand-filano"
+    ],
     "range_km_min": 0,
     "range_km_max": 25000,
     "must_do": [
-      { "task": "Ganti Oli Mesin", "interval": "Per 2.500-3.000 km" },
-      { "task": "Ganti Oli Gardan", "interval": "Per 8.000 km" },
-      { "task": "Bersihkan CVT", "interval": "Per 8.000 km" }
+      {
+        "task": "Ganti Busi (Nickel)",
+        "interval": "Setiap 8.000 km",
+        "due_km": 8000
+      }
+    ],
+    "check": [],
+    "human_message": "Busi nikel cepat aus akibat erosi elektroda, ganti tepat waktu agar tidak boros dan tarikan tetap responsif."
+  },
+  {
+    "id": "spark-plug-replacement-premium-matic",
+    "model_ids": [
+      "honda-vario-125",
+      "honda-vario-160",
+      "honda-pcx-160",
+      "honda-adv-160",
+      "yamaha-nmax-155",
+      "yamaha-aerox-155",
+      "yamaha-lexi-125"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 25000,
+    "must_do": [
+      {
+        "task": "Ganti Busi (Precious Metal/Iridium)",
+        "interval": "Setiap 12.000 km",
+        "due_km": 12000
+      }
+    ],
+    "check": [],
+    "human_message": "Busi precious metal (seperti LMAR8L-9) memberikan percikan stabil, ganti per 12.000 km mencegah mesin brebet/mati mendadak."
+  },
+  {
+    "id": "air-filter-replacement-viscous",
+    "model_ids": [
+      "honda-beat-110",
+      "honda-scoopy",
+      "honda-vario-125",
+      "honda-vario-160",
+      "honda-pcx-160",
+      "honda-adv-160",
+      "honda-supra-x-125",
+      "honda-revo",
+      "honda-crf150l",
+      "yamaha-nmax-155",
+      "yamaha-aerox-155",
+      "yamaha-lexi-125",
+      "yamaha-fazzio",
+      "yamaha-grand-filano",
+      "yamaha-mio-m3",
+      "yamaha-gear-125",
+      "yamaha-vixion",
+      "yamaha-r15",
+      "suzuki-nex-ii",
+      "suzuki-satria-f150"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 25000,
+    "must_do": [
+      {
+        "task": "Ganti Filter Udara (Viskos)",
+        "interval": "Setiap 12.000 km",
+        "due_km": 12000
+      }
+    ],
+    "check": [],
+    "human_message": "Filter udara viskos (kertas berlapis oli) tidak boleh dicuci/disemprot angin. Wajib ganti per 12.000 km agar aliran udara mesin maksimal."
+  },
+  {
+    "id": "vbelt-roller-replacement-standard",
+    "model_ids": [
+      "honda-vario-125",
+      "honda-vario-160",
+      "honda-pcx-160",
+      "honda-adv-160",
+      "yamaha-nmax-155",
+      "yamaha-aerox-155",
+      "yamaha-lexi-125",
+      "yamaha-fazzio",
+      "yamaha-grand-filano",
+      "yamaha-mio-m3",
+      "yamaha-gear-125",
+      "suzuki-nex-ii"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 30000,
+    "must_do": [
+      {
+        "task": "Ganti V-Belt & Roller Set",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      }
+    ],
+    "check": [],
+    "human_message": "Kondisi panas CVT membuat V-Belt rentan retak dan putus di jalan. Gantilah bersama roller sebelum 24.000 km."
+  },
+  {
+    "id": "final-drive-standard-chain",
+    "model_ids": [
+      "honda-supra-x-125",
+      "honda-revo",
+      "honda-crf150l",
+      "suzuki-satria-f150"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 25000,
+    "must_do": [
+      {
+        "task": "Ganti Gear Set & Rantai (Standar)",
+        "interval": "Setiap 15.000 km",
+        "due_km": 15000
+      }
+    ],
+    "check": [],
+    "human_message": "Rantai standar rentan kendor dan gir menajam, ganti satu set untuk mencegah rantai lepas atau gir gundul."
+  },
+  {
+    "id": "final-drive-oring-chain",
+    "model_ids": [
+      "yamaha-vixion",
+      "yamaha-r15"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 30000,
+    "must_do": [
+      {
+        "task": "Ganti Gear Set & Rantai (O-Ring)",
+        "interval": "Setiap 20.000 km",
+        "due_km": 20000
+      }
+    ],
+    "check": [],
+    "human_message": "Rantai O-Ring menahan gemuk di dalam, namun tetap perlu diganti per 20.000 km agar transfer tenaga selalu optimal."
+  },
+  {
+    "id": "suzuki-satria-f150-maintenance",
+    "model_ids": [
+      "suzuki-satria-f150"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 25000,
+    "must_do": [
+      {
+        "task": "Ganti Oli Mesin (Khusus DOHC)",
+        "interval": "Setiap 2.500 km",
+        "due_km": 2500
+      },
+      {
+        "task": "Setel Klep (Valve Clearance)",
+        "interval": "Setiap 20.000 km",
+        "due_km": 20000
+      },
+      {
+        "task": "Servis Besar (Kuras Kerak Mesin)",
+        "interval": "Setiap 20.000 km",
+        "due_km": 20000
+      }
     ],
     "check": [
-      { "task": "Filter Udara", "desc": "Penting untuk menjaga napas mesin tetap lega dan hemat BBM." },
-      { "task": "Rem", "desc": "Komponen keselamatan nomor satu yang wajib dicek berkala." },
-      { "task": "Ban", "desc": "Cek keausan ban dan tekanan angin demi stabilitas berkendara." }
+      {
+        "task": "Kopling",
+        "desc": "Pastikan kabel kopling tidak kaku dan perpindahan gigi tetap halus."
+      }
+    ],
+    "human_message": "Mesin DOHC Satria bekerja di RPM tinggi, oli sangat cepat rusak karena gesekan. Ganti oli mesin maksimal di 2.500 km."
+  },
+  {
+    "id": "suzuki-nex-ii-maintenance",
+    "model_ids": [
+      "suzuki-nex-ii"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 20000,
+    "must_do": [
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Setiap 2.500 km (Kondisi Berat)",
+        "due_km": 2500
+      },
+      {
+        "task": "Ganti Oli Gardan",
+        "interval": "Setiap 8.000 km",
+        "due_km": 8000
+      },
+      {
+        "task": "Bersihkan CVT",
+        "interval": "Setiap 8.000 km",
+        "due_km": 8000
+      }
+    ],
+    "check": [
+      {
+        "task": "Tekanan Ban",
+        "desc": "Tekanan kurang membuat ban cepat botak."
+      },
+      {
+        "task": "Rem",
+        "desc": "Pastikan kampas rem aman."
+      }
+    ],
+    "human_message": "Untuk kondisi komuter/macet perkotaan, pelumasan mesin Nex II paling aman diganti di 2.500 km agar performa awet."
+  },
+  {
+    "id": "matic-entry-fallback",
+    "model_ids": [
+      "matic-entry-fallback"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 25000,
+    "must_do": [
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Per 2.500-3.000 km"
+      },
+      {
+        "task": "Ganti Oli Gardan",
+        "interval": "Per 8.000 km"
+      },
+      {
+        "task": "Bersihkan CVT",
+        "interval": "Per 8.000 km"
+      }
+    ],
+    "check": [
+      {
+        "task": "Filter Udara",
+        "desc": "Penting untuk menjaga napas mesin tetap lega dan hemat BBM."
+      },
+      {
+        "task": "Rem",
+        "desc": "Komponen keselamatan nomor satu yang wajib dicek berkala."
+      },
+      {
+        "task": "Ban",
+        "desc": "Cek keausan ban dan tekanan angin demi stabilitas berkendara."
+      }
     ],
     "human_message": "Panduan umum matic entry: Ganti oli rutin dan bersihkan CVT setiap 8.000 km agar tidak gredek."
   },
   {
     "id": "matic-premium-fallback",
-    "model_ids": ["matic-premium-fallback"],
+    "model_ids": [
+      "matic-premium-fallback"
+    ],
     "range_km_min": 0,
     "range_km_max": 25000,
     "must_do": [
-      { "task": "Ganti Oli Mesin", "interval": "Per 3.000-4.000 km" },
-      { "task": "Cek Air Radiator", "interval": "Per 5.000 km" },
-      { "task": "Ganti Oli Gardan", "interval": "Per 10.000 km" }
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Per 3.000-4.000 km"
+      },
+      {
+        "task": "Cek Air Radiator",
+        "interval": "Per 5.000 km"
+      },
+      {
+        "task": "Ganti Oli Gardan",
+        "interval": "Per 10.000 km"
+      }
     ],
     "check": [
-      { "task": "Sistem Pendingin", "desc": "Radiator dan coolant adalah kunci kestabilan suhu mesin premium." },
-      { "task": "V-Belt", "desc": "Sabuk penggerak harus dipastikan tanpa retakan demi keamanan." },
-      { "task": "Rem", "desc": "Pastikan sistem ABS/CBS bekerja normal tanpa malfungsi." }
+      {
+        "task": "Sistem Pendingin",
+        "desc": "Radiator dan coolant adalah kunci kestabilan suhu mesin premium."
+      },
+      {
+        "task": "V-Belt",
+        "desc": "Sabuk penggerak harus dipastikan tanpa retakan demi keamanan."
+      },
+      {
+        "task": "Rem",
+        "desc": "Pastikan sistem ABS/CBS bekerja normal tanpa malfungsi."
+      }
     ],
     "human_message": "Panduan umum matic premium: pastikan sistem pendingin radiator selalu dalam kondisi optimal dan cek level oli."
   },
   {
     "id": "manual-fallback",
-    "model_ids": ["manual-fallback"],
+    "model_ids": [
+      "manual-fallback"
+    ],
     "range_km_min": 0,
     "range_km_max": 25000,
     "must_do": [
-      { "task": "Ganti Oli Mesin", "interval": "Per 3.000 km" },
-      { "task": "Lumasi & Setel Rantai", "interval": "Per 1.000 km" },
-      { "task": "Setel Klep", "interval": "Per 10.000 km" }
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Per 3.000 km"
+      },
+      {
+        "task": "Lumasi & Setel Rantai",
+        "interval": "Per 1.000 km"
+      },
+      {
+        "task": "Setel Klep",
+        "interval": "Per 10.000 km"
+      }
     ],
     "check": [
-      { "task": "Kopling", "desc": "Kabel kopling harus dilumasi agar tidak putus di tengah jalan." },
-      { "task": "Busi", "desc": "Kondisi elektroda menentukan kemudahan starter motor di pagi hari." },
-      { "task": "Gir Depan/Belakang", "desc": "Gir yang tajam merusak rantai dengan cepat dan berisik." }
+      {
+        "task": "Kopling",
+        "desc": "Kabel kopling harus dilumasi agar tidak putus di tengah jalan."
+      },
+      {
+        "task": "Busi",
+        "desc": "Kondisi elektroda menentukan kemudahan starter motor di pagi hari."
+      },
+      {
+        "task": "Gir Depan/Belakang",
+        "desc": "Gir yang tajam merusak rantai dengan cepat dan berisik."
+      }
     ],
     "human_message": "Panduan umum motor manual: rantai dan oli mesin adalah kunci keawetan mesin kamu."
   },
   {
     "id": "global-fallback-high-km",
-    "model_ids": ["default"],
+    "model_ids": [
+      "default"
+    ],
     "range_km_min": 25001,
     "range_km_max": 999999,
     "must_do": [
@@ -364,10 +741,22 @@
       }
     ],
     "check": [
-      { "task": "Seal Shock Breaker", "desc": "Rembesan oli pada as shock merusak stabilitas dan bisa mengotori piringan rem." },
-      { "task": "Bearing Roda & Komstir", "desc": "Setang kaku atau roda goyang sangat berbahaya untuk manuver dan kestabilan." },
-      { "task": "Kabel Gas & Rem", "desc": "Kabel yang mulai berserabut bisa putus tiba-tiba atau menyebabkan gas nyangkut." },
-      { "task": "Pengereman Total", "desc": "Uji coba pengereman mendadak untuk memastikan sistem ABS atau CBS berfungsi normal." }
+      {
+        "task": "Seal Shock Breaker",
+        "desc": "Rembesan oli pada as shock merusak stabilitas dan bisa mengotori piringan rem."
+      },
+      {
+        "task": "Bearing Roda & Komstir",
+        "desc": "Setang kaku atau roda goyang sangat berbahaya untuk manuver dan kestabilan."
+      },
+      {
+        "task": "Kabel Gas & Rem",
+        "desc": "Kabel yang mulai berserabut bisa putus tiba-tiba atau menyebabkan gas nyangkut."
+      },
+      {
+        "task": "Pengereman Total",
+        "desc": "Uji coba pengereman mendadak untuk memastikan sistem ABS atau CBS berfungsi normal."
+      }
     ],
     "human_message": "Motor sudah menempuh jarak sangat jauh. Lakukan servis besar menyeluruh, pembersihan Throttle Body, dan cek komstir untuk memastikan kenyamanan berkendara."
   }
