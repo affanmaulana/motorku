@@ -1,35 +1,7 @@
 [
   {
-    "id": "honda-beat-vbelt-special",
-    "model_ids": [
-      "honda-beat-110",
-      "honda-scoopy"
-    ],
-    "range_km_min": 18000,
-    "range_km_max": 22000,
-    "must_do": [
-      {
-        "task": "Ganti V-Belt (Early replacement)",
-        "interval": "Disarankan per 20.000-25.000 km (Data Tropis)",
-        "due_km": 20000
-      }
-    ],
-    "check": [
-      {
-        "task": "Roller Condition",
-        "desc": "Cek apakah roller sudah peang/tidak bulat. Roller peang menyebabkan akselerasi bergetar."
-      },
-      {
-        "task": "Rumah Roller",
-        "desc": "Cek keausan jalur roller. Jika sudah termakan, gerakan roller tidak akan mulus."
-      }
-    ]
-  },
-  {
     "id": "air-cooled-matic-0k-4k",
     "model_ids": [
-      "honda-beat-110",
-      "honda-scoopy",
       "yamaha-mio-m3",
       "yamaha-gear-125",
       "yamaha-fazzio",
@@ -70,8 +42,6 @@
   {
     "id": "air-cooled-matic-4k-20k",
     "model_ids": [
-      "honda-beat-110",
-      "honda-scoopy",
       "yamaha-mio-m3",
       "yamaha-gear-125",
       "yamaha-fazzio",
@@ -142,7 +112,6 @@
   {
     "id": "liquid-cooled-matic-125-0k-12k",
     "model_ids": [
-      "honda-vario-125",
       "yamaha-lexi-125"
     ],
     "range_km_min": 0,
@@ -193,9 +162,6 @@
   {
     "id": "liquid-cooled-matic-155-160-0k-12k",
     "model_ids": [
-      "honda-vario-160",
-      "honda-pcx-160",
-      "honda-adv-160",
       "yamaha-nmax-155",
       "yamaha-aerox-155"
     ],
@@ -269,9 +235,6 @@
   {
     "id": "keyless-battery-replacement",
     "model_ids": [
-      "honda-vario-160",
-      "honda-pcx-160",
-      "honda-adv-160",
       "yamaha-nmax-155",
       "yamaha-aerox-155",
       "yamaha-fazzio",
@@ -296,10 +259,6 @@
   {
     "id": "all-matic-coolant-drain",
     "model_ids": [
-      "honda-vario-125",
-      "honda-vario-160",
-      "honda-pcx-160",
-      "honda-adv-160",
       "yamaha-nmax-155",
       "yamaha-aerox-155",
       "yamaha-lexi-125"
@@ -336,8 +295,6 @@
   {
     "id": "manual-maintenance-0k-25k",
     "model_ids": [
-      "honda-supra-x-125",
-      "honda-revo",
       "honda-crf150l",
       "yamaha-vixion",
       "yamaha-r15"
@@ -385,8 +342,6 @@
   {
     "id": "spark-plug-replacement-entry-matic",
     "model_ids": [
-      "honda-beat-110",
-      "honda-scoopy",
       "suzuki-nex-ii",
       "yamaha-mio-m3",
       "yamaha-gear-125",
@@ -407,10 +362,6 @@
   {
     "id": "spark-plug-replacement-premium-matic",
     "model_ids": [
-      "honda-vario-125",
-      "honda-vario-160",
-      "honda-pcx-160",
-      "honda-adv-160",
       "yamaha-nmax-155",
       "yamaha-aerox-155",
       "yamaha-lexi-125"
@@ -429,14 +380,6 @@
   {
     "id": "air-filter-replacement-viscous",
     "model_ids": [
-      "honda-beat-110",
-      "honda-scoopy",
-      "honda-vario-125",
-      "honda-vario-160",
-      "honda-pcx-160",
-      "honda-adv-160",
-      "honda-supra-x-125",
-      "honda-revo",
       "honda-crf150l",
       "yamaha-nmax-155",
       "yamaha-aerox-155",
@@ -464,10 +407,6 @@
   {
     "id": "vbelt-roller-replacement-standard",
     "model_ids": [
-      "honda-vario-125",
-      "honda-vario-160",
-      "honda-pcx-160",
-      "honda-adv-160",
       "yamaha-nmax-155",
       "yamaha-aerox-155",
       "yamaha-lexi-125",
@@ -491,8 +430,6 @@
   {
     "id": "final-drive-standard-chain",
     "model_ids": [
-      "honda-supra-x-125",
-      "honda-revo",
       "honda-crf150l",
       "suzuki-satria-f150"
     ],
@@ -737,6 +674,1241 @@
       {
         "task": "Pengereman Total",
         "desc": "Uji coba pengereman mendadak untuk memastikan sistem ABS atau CBS berfungsi normal."
+      }
+    ]
+  },
+  {
+    "id": "honda-scoopy-schedule",
+    "model_ids": [
+      "honda-scoopy"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 999999,
+    "must_do": [
+      {
+        "task": "Ganti Saringan Udara",
+        "interval": "Setiap 16.000 km",
+        "due_km": 16000
+      },
+      {
+        "task": "Ganti Busi",
+        "interval": "Setiap 8.000 km",
+        "due_km": 8000
+      },
+      {
+        "task": "Ganti Oli Mesin (1.000 KM Pertama)",
+        "interval": "1.000 KM Pertama",
+        "due_km": 1000
+      },
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Setiap 4.000 km",
+        "due_km": 4000
+      },
+      {
+        "task": "Ganti Drive belt",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      },
+      {
+        "task": "Ganti Oli Final Drive",
+        "interval": "Setiap 8.000 km",
+        "due_km": 8000
+      },
+      {
+        "task": "Ganti Minyak Rem",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      }
+    ],
+    "check": [
+      {
+        "task": "Saluran Bahan Bakar",
+        "desc": "Periksa saluran bahan bakar dari retakan, kebocoran, atau sumbatan demi keselamatan."
+      },
+      {
+        "task": "Cara Kerja Gas Tangan",
+        "desc": "Pastikan putaran gas tangan dapat kembali ke posisi semula dengan lancar saat dilepas."
+      },
+      {
+        "task": "Saringan Udara",
+        "desc": "Saringan udara tipe viskos tidak boleh dibersihkan dengan semprotan angin. Ganti jika kotor."
+      },
+      {
+        "task": "Pernapasan Bak Mesin",
+        "desc": "Bersihkan selang pernapasan bak mesin dari endapan air/oli."
+      },
+      {
+        "task": "Busi",
+        "desc": "Periksa kerenggangan elektroda busi dan bersihkan dari tumpukan karbon pengapian."
+      },
+      {
+        "task": "Jarak Renggang Klep",
+        "desc": "Periksa kerenggangan klep (celah katup) agar kompresi mesin tetap optimal."
+      },
+      {
+        "task": "Oli Mesin",
+        "desc": "Ganti oli mesin berkala untuk mencegah keausan komponen internal silinder."
+      },
+      {
+        "task": "Saringan Kasa Oli Mesin",
+        "desc": "Bersihkan saringan kasa oli mesin untuk menyaring gram besi kasar."
+      },
+      {
+        "task": "Putaran Stasioner Mesin",
+        "desc": "Periksa putaran stasioner (idle) mesin agar tidak terlalu tinggi atau mati mendadak."
+      },
+      {
+        "task": "Cairan Pendingin Radiator",
+        "desc": "Periksa ketinggian air radiator (coolant) di tangki cadangan (reservoir tank)."
+      },
+      {
+        "task": "Sistem Pendingin",
+        "desc": "Periksa jalur pendingin radiator dari kebocoran slang atau kerusakan sirip radiator."
+      },
+      {
+        "task": "Sistem Pengaturan Emisi Evaporatif",
+        "desc": "Periksa sistem emisi evaporatif dari sumbatan atau kebocoran slang."
+      },
+      {
+        "task": "Drive belt",
+        "desc": "Periksa kondisi sabuk penggerak (V-Belt) dari keretakan atau keausan parah."
+      },
+      {
+        "task": "Oli Final Drive",
+        "desc": "Ganti oli gardan berkala agar transmisi matic tidak berisik dan aus."
+      },
+      {
+        "task": "Baterai",
+        "desc": "Periksa tegangan aki untuk kestabilan suplai listrik starter dan sensor injeksi."
+      },
+      {
+        "task": "Minyak Rem",
+        "desc": "Periksa level minyak rem dan ganti secara berkala untuk menjaga tekanan hidrolik."
+      },
+      {
+        "task": "Keausan Kampas Rem",
+        "desc": "Cek ketebalan kampas rem depan dan belakang untuk keselamatan pengereman."
+      },
+      {
+        "task": "Sistem Rem",
+        "desc": "Periksa fungsi pengereman total secara dinamis (termasuk tuas dan cakram/tromol)."
+      },
+      {
+        "task": "Cara Kerja Kunci Rem",
+        "desc": "Periksa fungsi brake lock (kunci rem) untuk parkir di tanjakan/turunan."
+      },
+      {
+        "task": "Arah Sinar Lampu Depan",
+        "desc": "Sesuaikan arah sorot lampu depan agar tidak menyilaukan pengendara lain."
+      },
+      {
+        "task": "Keausan kampas kopling",
+        "desc": "Periksa ketebalan kampas kopling ganda pada matic agar tidak selip saat akselerasi."
+      },
+      {
+        "task": "Standar Samping",
+        "desc": "Periksa kelancaran engsel standar samping dan switch pemutus mesin otomatis."
+      },
+      {
+        "task": "Suspensi",
+        "desc": "Cek kebocoran oli shockbreaker depan/belakang demi kenyamanan suspensi."
+      },
+      {
+        "task": "Mur, Baut, Pengencang",
+        "desc": "Periksa kekencangan baut dan mur pada sasis, roda, kemudi, dan suspensi."
+      },
+      {
+        "task": "Roda/Ban",
+        "desc": "Cek tekanan angin ban dan kedalaman alur ban agar tidak tergelincir."
+      },
+      {
+        "task": "Bantalan Kepala Kemudi",
+        "desc": "Periksa kestabilan komstir agar setang tidak oblak atau terasa kaku berat."
+      }
+    ]
+  },
+  {
+    "id": "honda-beat-schedule",
+    "model_ids": [
+      "honda-beat-110"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 999999,
+    "must_do": [
+      {
+        "task": "Ganti Saringan Udara",
+        "interval": "Setiap 16.000 km",
+        "due_km": 16000
+      },
+      {
+        "task": "Ganti Busi",
+        "interval": "Setiap 8.000 km",
+        "due_km": 8000
+      },
+      {
+        "task": "Ganti Oli Mesin (1.000 KM Pertama)",
+        "interval": "1.000 KM Pertama",
+        "due_km": 1000
+      },
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Setiap 4.000 km",
+        "due_km": 4000
+      },
+      {
+        "task": "Ganti Drive belt",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      },
+      {
+        "task": "Ganti Oli Final Drive",
+        "interval": "Setiap 8.000 km",
+        "due_km": 8000
+      },
+      {
+        "task": "Ganti Minyak Rem",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      }
+    ],
+    "check": [
+      {
+        "task": "Saluran Bahan Bakar",
+        "desc": "Periksa saluran bahan bakar dari retakan, kebocoran, atau sumbatan demi keselamatan."
+      },
+      {
+        "task": "Cara Kerja Gas Tangan",
+        "desc": "Pastikan putaran gas tangan dapat kembali ke posisi semula dengan lancar saat dilepas."
+      },
+      {
+        "task": "Saringan Udara",
+        "desc": "Saringan udara tipe viskos tidak boleh dibersihkan dengan semprotan angin. Ganti jika kotor."
+      },
+      {
+        "task": "Pernapasan Bak Mesin",
+        "desc": "Bersihkan selang pernapasan bak mesin dari endapan air/oli."
+      },
+      {
+        "task": "Busi",
+        "desc": "Periksa kerenggangan elektroda busi dan bersihkan dari tumpukan karbon pengapian."
+      },
+      {
+        "task": "Jarak Renggang Klep",
+        "desc": "Periksa kerenggangan klep (celah katup) agar kompresi mesin tetap optimal."
+      },
+      {
+        "task": "Oli Mesin",
+        "desc": "Ganti oli mesin berkala untuk mencegah keausan komponen internal silinder."
+      },
+      {
+        "task": "Saringan Kasa Oli Mesin",
+        "desc": "Bersihkan saringan kasa oli mesin untuk menyaring gram besi kasar."
+      },
+      {
+        "task": "Putaran Stasioner Mesin",
+        "desc": "Periksa putaran stasioner (idle) mesin agar tidak terlalu tinggi atau mati mendadak."
+      },
+      {
+        "task": "Cairan Pendingin Radiator",
+        "desc": "Periksa ketinggian air radiator (coolant) di tangki cadangan (reservoir tank)."
+      },
+      {
+        "task": "Sistem Pendingin",
+        "desc": "Periksa jalur pendingin radiator dari kebocoran slang atau kerusakan sirip radiator."
+      },
+      {
+        "task": "Sistem Pengaturan Emisi Evaporatif",
+        "desc": "Periksa sistem emisi evaporatif dari sumbatan atau kebocoran slang."
+      },
+      {
+        "task": "Drive belt",
+        "desc": "Periksa kondisi sabuk penggerak (V-Belt) dari keretakan atau keausan parah."
+      },
+      {
+        "task": "Oli Final Drive",
+        "desc": "Ganti oli gardan berkala agar transmisi matic tidak berisik dan aus."
+      },
+      {
+        "task": "Baterai",
+        "desc": "Periksa tegangan aki untuk kestabilan suplai listrik starter dan sensor injeksi."
+      },
+      {
+        "task": "Minyak Rem",
+        "desc": "Periksa level minyak rem dan ganti secara berkala untuk menjaga tekanan hidrolik."
+      },
+      {
+        "task": "Keausan Kampas Rem",
+        "desc": "Cek ketebalan kampas rem depan dan belakang untuk keselamatan pengereman."
+      },
+      {
+        "task": "Sistem Rem",
+        "desc": "Periksa fungsi pengereman total secara dinamis (termasuk tuas dan cakram/tromol)."
+      },
+      {
+        "task": "Cara Kerja Kunci Rem",
+        "desc": "Periksa fungsi brake lock (kunci rem) untuk parkir di tanjakan/turunan."
+      },
+      {
+        "task": "Arah Sinar Lampu Depan",
+        "desc": "Sesuaikan arah sorot lampu depan agar tidak menyilaukan pengendara lain."
+      },
+      {
+        "task": "Keausan kampas kopling",
+        "desc": "Periksa ketebalan kampas kopling ganda pada matic agar tidak selip saat akselerasi."
+      },
+      {
+        "task": "Standar Samping",
+        "desc": "Periksa kelancaran engsel standar samping dan switch pemutus mesin otomatis."
+      },
+      {
+        "task": "Suspensi",
+        "desc": "Cek kebocoran oli shockbreaker depan/belakang demi kenyamanan suspensi."
+      },
+      {
+        "task": "Mur, Baut, Pengencang",
+        "desc": "Periksa kekencangan baut dan mur pada sasis, roda, kemudi, dan suspensi."
+      },
+      {
+        "task": "Roda/Ban",
+        "desc": "Cek tekanan angin ban dan kedalaman alur ban agar tidak tergelincir."
+      },
+      {
+        "task": "Bantalan Kepala Kemudi",
+        "desc": "Periksa kestabilan komstir agar setang tidak oblak atau terasa kaku berat."
+      }
+    ]
+  },
+  {
+    "id": "honda-revo-schedule",
+    "model_ids": [
+      "honda-revo"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 999999,
+    "must_do": [
+      {
+        "task": "Ganti Saringan Udara",
+        "interval": "Setiap 16.000 km",
+        "due_km": 16000
+      },
+      {
+        "task": "Ganti Busi",
+        "interval": "Setiap 8.000 km",
+        "due_km": 8000
+      },
+      {
+        "task": "Ganti Oli Mesin (1.000 KM Pertama)",
+        "interval": "1.000 KM Pertama",
+        "due_km": 1000
+      },
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Setiap 4.000 km",
+        "due_km": 4000
+      },
+      {
+        "task": "Ganti Minyak Rem",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      }
+    ],
+    "check": [
+      {
+        "task": "Saluran Bahan Bakar",
+        "desc": "Periksa saluran bahan bakar dari retakan, kebocoran, atau sumbatan demi keselamatan."
+      },
+      {
+        "task": "Cara Kerja Gas Tangan",
+        "desc": "Pastikan putaran gas tangan dapat kembali ke posisi semula dengan lancar saat dilepas."
+      },
+      {
+        "task": "Saringan Udara",
+        "desc": "Saringan udara tipe viskos tidak boleh dibersihkan dengan semprotan angin. Ganti jika kotor."
+      },
+      {
+        "task": "Pernapasan Bak Mesin",
+        "desc": "Bersihkan selang pernapasan bak mesin dari endapan air/oli."
+      },
+      {
+        "task": "Busi",
+        "desc": "Periksa kerenggangan elektroda busi dan bersihkan dari tumpukan karbon pengapian."
+      },
+      {
+        "task": "Jarak Renggang Klep",
+        "desc": "Periksa kerenggangan klep (celah katup) agar kompresi mesin tetap optimal."
+      },
+      {
+        "task": "Oli Mesin",
+        "desc": "Ganti oli mesin berkala untuk mencegah keausan komponen internal silinder."
+      },
+      {
+        "task": "Saringan Kasa Oli Mesin",
+        "desc": "Bersihkan saringan kasa oli mesin untuk menyaring gram besi kasar."
+      },
+      {
+        "task": "Saringan Centrifugal Oli Mesin",
+        "desc": "Bersihkan saringan centrifugal dari endapan oli kotor."
+      },
+      {
+        "task": "Putaran Stasioner Mesin",
+        "desc": "Periksa putaran stasioner (idle) mesin agar tidak terlalu tinggi atau mati mendadak."
+      },
+      {
+        "task": "Rantai Roda",
+        "desc": "Lumasi, setel tegangan, dan periksa keausan gir serta rantai roda bebek/sport."
+      },
+      {
+        "task": "Cairan Pendingin Radiator",
+        "desc": "Periksa ketinggian air radiator (coolant) di tangki cadangan (reservoir tank)."
+      },
+      {
+        "task": "Sistem Pendingin",
+        "desc": "Periksa jalur pendingin radiator dari kebocoran slang atau kerusakan sirip radiator."
+      },
+      {
+        "task": "Sistem Pengaturan Emisi Evaporatif",
+        "desc": "Periksa sistem emisi evaporatif dari sumbatan atau kebocoran slang."
+      },
+      {
+        "task": "Drive belt",
+        "desc": "Periksa kondisi sabuk penggerak (V-Belt) dari keretakan atau keausan parah."
+      },
+      {
+        "task": "Oli Final Drive",
+        "desc": "Ganti oli gardan berkala agar transmisi matic tidak berisik dan aus."
+      },
+      {
+        "task": "Baterai",
+        "desc": "Periksa tegangan aki untuk kestabilan suplai listrik starter dan sensor injeksi."
+      },
+      {
+        "task": "Minyak Rem",
+        "desc": "Periksa level minyak rem dan ganti secara berkala untuk menjaga tekanan hidrolik."
+      },
+      {
+        "task": "Keausan Kampas Rem",
+        "desc": "Cek ketebalan kampas rem depan dan belakang untuk keselamatan pengereman."
+      },
+      {
+        "task": "Sistem Rem",
+        "desc": "Periksa fungsi pengereman total secara dinamis (termasuk tuas dan cakram/tromol)."
+      },
+      {
+        "task": "Switch Lampu Rem",
+        "desc": "Periksa switch lampu rem agar lampu rem menyala responsif saat tuas ditekan."
+      },
+      {
+        "task": "Arah Sinar Lampu Depan",
+        "desc": "Sesuaikan arah sorot lampu depan agar tidak menyilaukan pengendara lain."
+      },
+      {
+        "task": "Sistem Kopling",
+        "desc": "Periksa jarak main tuas kopling dan kelancaran kabel kopling mekanis."
+      },
+      {
+        "task": "Standar Samping",
+        "desc": "Periksa kelancaran engsel standar samping dan switch pemutus mesin otomatis."
+      },
+      {
+        "task": "Suspensi",
+        "desc": "Cek kebocoran oli shockbreaker depan/belakang demi kenyamanan suspensi."
+      },
+      {
+        "task": "Mur, Baut, Pengencang",
+        "desc": "Periksa kekencangan baut dan mur pada sasis, roda, kemudi, dan suspensi."
+      },
+      {
+        "task": "Roda/Ban",
+        "desc": "Cek tekanan angin ban dan kedalaman alur ban agar tidak tergelincir."
+      },
+      {
+        "task": "Bantalan Kepala Kemudi",
+        "desc": "Periksa kestabilan komstir agar setang tidak oblak atau terasa kaku berat."
+      }
+    ]
+  },
+  {
+    "id": "honda-supra-x-125-schedule",
+    "model_ids": [
+      "honda-supra-x-125"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 999999,
+    "must_do": [
+      {
+        "task": "Ganti Saringan Udara",
+        "interval": "Setiap 16.000 km",
+        "due_km": 16000
+      },
+      {
+        "task": "Ganti Busi",
+        "interval": "Setiap 8.000 km",
+        "due_km": 8000
+      },
+      {
+        "task": "Ganti Oli Mesin (1.000 KM Pertama)",
+        "interval": "1.000 KM Pertama",
+        "due_km": 1000
+      },
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Setiap 4.000 km",
+        "due_km": 4000
+      },
+      {
+        "task": "Ganti Minyak Rem",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      }
+    ],
+    "check": [
+      {
+        "task": "Saluran Bahan Bakar",
+        "desc": "Periksa saluran bahan bakar dari retakan, kebocoran, atau sumbatan demi keselamatan."
+      },
+      {
+        "task": "Cara Kerja Gas Tangan",
+        "desc": "Pastikan putaran gas tangan dapat kembali ke posisi semula dengan lancar saat dilepas."
+      },
+      {
+        "task": "Saringan Udara",
+        "desc": "Saringan udara tipe viskos tidak boleh dibersihkan dengan semprotan angin. Ganti jika kotor."
+      },
+      {
+        "task": "Pernapasan Bak Mesin",
+        "desc": "Bersihkan selang pernapasan bak mesin dari endapan air/oli."
+      },
+      {
+        "task": "Busi",
+        "desc": "Periksa kerenggangan elektroda busi dan bersihkan dari tumpukan karbon pengapian."
+      },
+      {
+        "task": "Jarak Renggang Klep",
+        "desc": "Periksa kerenggangan klep (celah katup) agar kompresi mesin tetap optimal."
+      },
+      {
+        "task": "Oli Mesin",
+        "desc": "Ganti oli mesin berkala untuk mencegah keausan komponen internal silinder."
+      },
+      {
+        "task": "Saringan Kasa Oli Mesin",
+        "desc": "Bersihkan saringan kasa oli mesin untuk menyaring gram besi kasar."
+      },
+      {
+        "task": "Saringan Centrifugal Oli Mesin",
+        "desc": "Bersihkan saringan centrifugal dari endapan oli kotor."
+      },
+      {
+        "task": "Putaran Stasioner Mesin",
+        "desc": "Periksa putaran stasioner (idle) mesin agar tidak terlalu tinggi atau mati mendadak."
+      },
+      {
+        "task": "Rantai Roda",
+        "desc": "Lumasi, setel tegangan, dan periksa keausan gir serta rantai roda bebek/sport."
+      },
+      {
+        "task": "Cairan Pendingin Radiator",
+        "desc": "Periksa ketinggian air radiator (coolant) di tangki cadangan (reservoir tank)."
+      },
+      {
+        "task": "Sistem Pendingin",
+        "desc": "Periksa jalur pendingin radiator dari kebocoran slang atau kerusakan sirip radiator."
+      },
+      {
+        "task": "Sistem Pengaturan Emisi Evaporatif",
+        "desc": "Periksa sistem emisi evaporatif dari sumbatan atau kebocoran slang."
+      },
+      {
+        "task": "Drive belt",
+        "desc": "Periksa kondisi sabuk penggerak (V-Belt) dari keretakan atau keausan parah."
+      },
+      {
+        "task": "Oli Final Drive",
+        "desc": "Ganti oli gardan berkala agar transmisi matic tidak berisik dan aus."
+      },
+      {
+        "task": "Baterai",
+        "desc": "Periksa tegangan aki untuk kestabilan suplai listrik starter dan sensor injeksi."
+      },
+      {
+        "task": "Minyak Rem",
+        "desc": "Periksa level minyak rem dan ganti secara berkala untuk menjaga tekanan hidrolik."
+      },
+      {
+        "task": "Keausan Kampas Rem",
+        "desc": "Cek ketebalan kampas rem depan dan belakang untuk keselamatan pengereman."
+      },
+      {
+        "task": "Sistem Rem",
+        "desc": "Periksa fungsi pengereman total secara dinamis (termasuk tuas dan cakram/tromol)."
+      },
+      {
+        "task": "Switch Lampu Rem",
+        "desc": "Periksa switch lampu rem agar lampu rem menyala responsif saat tuas ditekan."
+      },
+      {
+        "task": "Arah Sinar Lampu Depan",
+        "desc": "Sesuaikan arah sorot lampu depan agar tidak menyilaukan pengendara lain."
+      },
+      {
+        "task": "Sistem Kopling",
+        "desc": "Periksa jarak main tuas kopling dan kelancaran kabel kopling mekanis."
+      },
+      {
+        "task": "Standar Samping",
+        "desc": "Periksa kelancaran engsel standar samping dan switch pemutus mesin otomatis."
+      },
+      {
+        "task": "Suspensi",
+        "desc": "Cek kebocoran oli shockbreaker depan/belakang demi kenyamanan suspensi."
+      },
+      {
+        "task": "Mur, Baut, Pengencang",
+        "desc": "Periksa kekencangan baut dan mur pada sasis, roda, kemudi, dan suspensi."
+      },
+      {
+        "task": "Roda/Ban",
+        "desc": "Cek tekanan angin ban dan kedalaman alur ban agar tidak tergelincir."
+      },
+      {
+        "task": "Bantalan Kepala Kemudi",
+        "desc": "Periksa kestabilan komstir agar setang tidak oblak atau terasa kaku berat."
+      }
+    ]
+  },
+  {
+    "id": "honda-vario-150-and-125-schedule",
+    "model_ids": [
+      "honda-vario-125"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 999999,
+    "must_do": [
+      {
+        "task": "Ganti Saringan Udara",
+        "interval": "Setiap 16.000 km",
+        "due_km": 16000
+      },
+      {
+        "task": "Ganti Busi",
+        "interval": "Setiap 8.000 km",
+        "due_km": 8000
+      },
+      {
+        "task": "Ganti Oli Mesin (1.000 KM Pertama)",
+        "interval": "1.000 KM Pertama",
+        "due_km": 1000
+      },
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Setiap 4.000 km",
+        "due_km": 4000
+      },
+      {
+        "task": "Ganti Drive belt",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      },
+      {
+        "task": "Ganti Oli Gear Transmisi",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      },
+      {
+        "task": "Ganti Minyak Rem",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      }
+    ],
+    "check": [
+      {
+        "task": "Saluran Bahan Bakar",
+        "desc": "Periksa saluran bahan bakar dari retakan, kebocoran, atau sumbatan demi keselamatan."
+      },
+      {
+        "task": "Cara Kerja Gas Tangan",
+        "desc": "Pastikan putaran gas tangan dapat kembali ke posisi semula dengan lancar saat dilepas."
+      },
+      {
+        "task": "Saringan Udara",
+        "desc": "Saringan udara tipe viskos tidak boleh dibersihkan dengan semprotan angin. Ganti jika kotor."
+      },
+      {
+        "task": "Pernapasan Bak Mesin",
+        "desc": "Bersihkan selang pernapasan bak mesin dari endapan air/oli."
+      },
+      {
+        "task": "Busi",
+        "desc": "Periksa kerenggangan elektroda busi dan bersihkan dari tumpukan karbon pengapian."
+      },
+      {
+        "task": "Jarak Renggang Klep",
+        "desc": "Periksa kerenggangan klep (celah katup) agar kompresi mesin tetap optimal."
+      },
+      {
+        "task": "Oli Mesin",
+        "desc": "Ganti oli mesin berkala untuk mencegah keausan komponen internal silinder."
+      },
+      {
+        "task": "Saringan Kasa Oli Mesin",
+        "desc": "Bersihkan saringan kasa oli mesin untuk menyaring gram besi kasar."
+      },
+      {
+        "task": "Putaran Stasioner Mesin",
+        "desc": "Periksa putaran stasioner (idle) mesin agar tidak terlalu tinggi atau mati mendadak."
+      },
+      {
+        "task": "Cairan Pendingin Radiator",
+        "desc": "Periksa ketinggian air radiator (coolant) di tangki cadangan (reservoir tank)."
+      },
+      {
+        "task": "Sistem Pendingin",
+        "desc": "Periksa jalur pendingin radiator dari kebocoran slang atau kerusakan sirip radiator."
+      },
+      {
+        "task": "Sistem Pengaturan Emisi Evaporatif",
+        "desc": "Periksa sistem emisi evaporatif dari sumbatan atau kebocoran slang."
+      },
+      {
+        "task": "Drive belt",
+        "desc": "Periksa kondisi sabuk penggerak (V-Belt) dari keretakan atau keausan parah."
+      },
+      {
+        "task": "Oli Gear Transmisi",
+        "desc": "Ganti oli gardan berkala agar transmisi matic tidak berisik dan aus."
+      },
+      {
+        "task": "Oli Final Drive",
+        "desc": "Ganti oli gardan berkala agar transmisi matic tidak berisik dan aus."
+      },
+      {
+        "task": "Baterai",
+        "desc": "Periksa tegangan aki untuk kestabilan suplai listrik starter dan sensor injeksi."
+      },
+      {
+        "task": "Minyak Rem",
+        "desc": "Periksa level minyak rem dan ganti secara berkala untuk menjaga tekanan hidrolik."
+      },
+      {
+        "task": "Keausan Kampas Rem",
+        "desc": "Cek ketebalan kampas rem depan dan belakang untuk keselamatan pengereman."
+      },
+      {
+        "task": "Sistem Rem",
+        "desc": "Periksa fungsi pengereman total secara dinamis (termasuk tuas dan cakram/tromol)."
+      },
+      {
+        "task": "Cara Kerja Kunci Rem",
+        "desc": "Periksa fungsi brake lock (kunci rem) untuk parkir di tanjakan/turunan."
+      },
+      {
+        "task": "Arah Sinar Lampu Depan",
+        "desc": "Sesuaikan arah sorot lampu depan agar tidak menyilaukan pengendara lain."
+      },
+      {
+        "task": "Keausan kampas kopling",
+        "desc": "Periksa ketebalan kampas kopling ganda pada matic agar tidak selip saat akselerasi."
+      },
+      {
+        "task": "Standar Samping",
+        "desc": "Periksa kelancaran engsel standar samping dan switch pemutus mesin otomatis."
+      },
+      {
+        "task": "Suspensi",
+        "desc": "Cek kebocoran oli shockbreaker depan/belakang demi kenyamanan suspensi."
+      },
+      {
+        "task": "Mur, Baut, Pengencang",
+        "desc": "Periksa kekencangan baut dan mur pada sasis, roda, kemudi, dan suspensi."
+      },
+      {
+        "task": "Roda/Ban",
+        "desc": "Cek tekanan angin ban dan kedalaman alur ban agar tidak tergelincir."
+      },
+      {
+        "task": "Bantalan Kepala Kemudi",
+        "desc": "Periksa kestabilan komstir agar setang tidak oblak atau terasa kaku berat."
+      }
+    ]
+  },
+  {
+    "id": "honda-vario-160-schedule",
+    "model_ids": [
+      "honda-vario-160"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 999999,
+    "must_do": [
+      {
+        "task": "Ganti Saringan Udara",
+        "interval": "Setiap 18.000 km",
+        "due_km": 18000
+      },
+      {
+        "task": "Ganti Busi",
+        "interval": "Setiap 12.000 km",
+        "due_km": 12000
+      },
+      {
+        "task": "Ganti Oli Mesin (1.000 KM Pertama)",
+        "interval": "1.000 KM Pertama",
+        "due_km": 1000
+      },
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Setiap 6.000 km",
+        "due_km": 6000
+      },
+      {
+        "task": "Ganti Cairan Pendingin Radiator",
+        "interval": "Setiap 36.000 km",
+        "due_km": 36000
+      },
+      {
+        "task": "Ganti Drive belt",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      },
+      {
+        "task": "Ganti Oli Final Drive",
+        "interval": "Setiap 12.000 km",
+        "due_km": 12000
+      },
+      {
+        "task": "Ganti Minyak Rem",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      }
+    ],
+    "check": [
+      {
+        "task": "Saluran Bahan Bakar",
+        "desc": "Periksa saluran bahan bakar dari retakan, kebocoran, atau sumbatan demi keselamatan."
+      },
+      {
+        "task": "Cara Kerja Gas Tangan",
+        "desc": "Pastikan putaran gas tangan dapat kembali ke posisi semula dengan lancar saat dilepas."
+      },
+      {
+        "task": "Saringan Udara",
+        "desc": "Saringan udara tipe viskos tidak boleh dibersihkan dengan semprotan angin. Ganti jika kotor."
+      },
+      {
+        "task": "Pernapasan Bak Mesin",
+        "desc": "Bersihkan selang pernapasan bak mesin dari endapan air/oli."
+      },
+      {
+        "task": "Busi",
+        "desc": "Periksa kerenggangan elektroda busi dan bersihkan dari tumpukan karbon pengapian."
+      },
+      {
+        "task": "Jarak Renggang Klep",
+        "desc": "Periksa kerenggangan klep (celah katup) agar kompresi mesin tetap optimal."
+      },
+      {
+        "task": "Oli Mesin",
+        "desc": "Ganti oli mesin berkala untuk mencegah keausan komponen internal silinder."
+      },
+      {
+        "task": "Saringan Kasa Oli Mesin",
+        "desc": "Bersihkan saringan kasa oli mesin untuk menyaring gram besi kasar."
+      },
+      {
+        "task": "Putaran Stasioner Mesin",
+        "desc": "Periksa putaran stasioner (idle) mesin agar tidak terlalu tinggi atau mati mendadak."
+      },
+      {
+        "task": "Cairan Pendingin Radiator",
+        "desc": "Periksa ketinggian air radiator (coolant) di tangki cadangan (reservoir tank)."
+      },
+      {
+        "task": "Sistem Pendingin",
+        "desc": "Periksa jalur pendingin radiator dari kebocoran slang atau kerusakan sirip radiator."
+      },
+      {
+        "task": "Sistem Pengaturan Emisi Evaporatif",
+        "desc": "Periksa sistem emisi evaporatif dari sumbatan atau kebocoran slang."
+      },
+      {
+        "task": "Drive belt",
+        "desc": "Periksa kondisi sabuk penggerak (V-Belt) dari keretakan atau keausan parah."
+      },
+      {
+        "task": "Oli Gear Transmisi",
+        "desc": "Ganti oli gardan berkala agar transmisi matic tidak berisik dan aus."
+      },
+      {
+        "task": "Oli Final Drive",
+        "desc": "Ganti oli gardan berkala agar transmisi matic tidak berisik dan aus."
+      },
+      {
+        "task": "Baterai",
+        "desc": "Periksa tegangan aki untuk kestabilan suplai listrik starter dan sensor injeksi."
+      },
+      {
+        "task": "Minyak Rem",
+        "desc": "Periksa level minyak rem dan ganti secara berkala untuk menjaga tekanan hidrolik."
+      },
+      {
+        "task": "Keausan Kampas Rem",
+        "desc": "Cek ketebalan kampas rem depan dan belakang untuk keselamatan pengereman."
+      },
+      {
+        "task": "Sistem Rem",
+        "desc": "Periksa fungsi pengereman total secara dinamis (termasuk tuas dan cakram/tromol)."
+      },
+      {
+        "task": "Cara Kerja Kunci Rem",
+        "desc": "Periksa fungsi brake lock (kunci rem) untuk parkir di tanjakan/turunan."
+      },
+      {
+        "task": "Arah Sinar Lampu Depan",
+        "desc": "Sesuaikan arah sorot lampu depan agar tidak menyilaukan pengendara lain."
+      },
+      {
+        "task": "Keausan kampas kopling",
+        "desc": "Periksa ketebalan kampas kopling ganda pada matic agar tidak selip saat akselerasi."
+      },
+      {
+        "task": "Standar Samping",
+        "desc": "Periksa kelancaran engsel standar samping dan switch pemutus mesin otomatis."
+      },
+      {
+        "task": "Suspensi",
+        "desc": "Cek kebocoran oli shockbreaker depan/belakang demi kenyamanan suspensi."
+      },
+      {
+        "task": "Mur, Baut, Pengencang",
+        "desc": "Periksa kekencangan baut dan mur pada sasis, roda, kemudi, dan suspensi."
+      },
+      {
+        "task": "Roda/Ban",
+        "desc": "Cek tekanan angin ban dan kedalaman alur ban agar tidak tergelincir."
+      },
+      {
+        "task": "Bantalan Kepala Kemudi",
+        "desc": "Periksa kestabilan komstir agar setang tidak oblak atau terasa kaku berat."
+      }
+    ]
+  },
+  {
+    "id": "honda-adv-150-schedule",
+    "model_ids": [
+      "honda-adv-160"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 999999,
+    "must_do": [
+      {
+        "task": "Ganti Saringan Udara",
+        "interval": "Setiap 18.000 km",
+        "due_km": 18000
+      },
+      {
+        "task": "Ganti Busi",
+        "interval": "Setiap 12.000 km",
+        "due_km": 12000
+      },
+      {
+        "task": "Ganti Oli Mesin (1.000 KM Pertama)",
+        "interval": "1.000 KM Pertama",
+        "due_km": 1000
+      },
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Setiap 6.000 km",
+        "due_km": 6000
+      },
+      {
+        "task": "Ganti Cairan Pendingin Radiator",
+        "interval": "Setiap 36.000 km",
+        "due_km": 36000
+      },
+      {
+        "task": "Ganti Drive belt",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      },
+      {
+        "task": "Ganti Oli Final Drive",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      },
+      {
+        "task": "Ganti Minyak Rem",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      }
+    ],
+    "check": [
+      {
+        "task": "Saluran Bahan Bakar",
+        "desc": "Periksa saluran bahan bakar dari retakan, kebocoran, atau sumbatan demi keselamatan."
+      },
+      {
+        "task": "Cara Kerja Gas Tangan",
+        "desc": "Pastikan putaran gas tangan dapat kembali ke posisi semula dengan lancar saat dilepas."
+      },
+      {
+        "task": "Saringan Udara",
+        "desc": "Saringan udara tipe viskos tidak boleh dibersihkan dengan semprotan angin. Ganti jika kotor."
+      },
+      {
+        "task": "Pernapasan Bak Mesin",
+        "desc": "Bersihkan selang pernapasan bak mesin dari endapan air/oli."
+      },
+      {
+        "task": "Busi",
+        "desc": "Periksa kerenggangan elektroda busi dan bersihkan dari tumpukan karbon pengapian."
+      },
+      {
+        "task": "Jarak Renggang Klep",
+        "desc": "Periksa kerenggangan klep (celah katup) agar kompresi mesin tetap optimal."
+      },
+      {
+        "task": "Oli Mesin",
+        "desc": "Ganti oli mesin berkala untuk mencegah keausan komponen internal silinder."
+      },
+      {
+        "task": "Saringan Kasa Oli Mesin",
+        "desc": "Bersihkan saringan kasa oli mesin untuk menyaring gram besi kasar."
+      },
+      {
+        "task": "Putaran Stasioner Mesin",
+        "desc": "Periksa putaran stasioner (idle) mesin agar tidak terlalu tinggi atau mati mendadak."
+      },
+      {
+        "task": "Cairan Pendingin Radiator",
+        "desc": "Periksa ketinggian air radiator (coolant) di tangki cadangan (reservoir tank)."
+      },
+      {
+        "task": "Sistem Pendingin",
+        "desc": "Periksa jalur pendingin radiator dari kebocoran slang atau kerusakan sirip radiator."
+      },
+      {
+        "task": "Sistem Pengaturan Emisi Evaporatif",
+        "desc": "Periksa sistem emisi evaporatif dari sumbatan atau kebocoran slang."
+      },
+      {
+        "task": "Drive belt",
+        "desc": "Periksa kondisi sabuk penggerak (V-Belt) dari keretakan atau keausan parah."
+      },
+      {
+        "task": "Oli Gear Transmisi",
+        "desc": "Ganti oli gardan berkala agar transmisi matic tidak berisik dan aus."
+      },
+      {
+        "task": "Oli Final Drive",
+        "desc": "Ganti oli gardan berkala agar transmisi matic tidak berisik dan aus."
+      },
+      {
+        "task": "Baterai",
+        "desc": "Periksa tegangan aki untuk kestabilan suplai listrik starter dan sensor injeksi."
+      },
+      {
+        "task": "Minyak Rem",
+        "desc": "Periksa level minyak rem dan ganti secara berkala untuk menjaga tekanan hidrolik."
+      },
+      {
+        "task": "Keausan Kampas Rem",
+        "desc": "Cek ketebalan kampas rem depan dan belakang untuk keselamatan pengereman."
+      },
+      {
+        "task": "Sistem Rem",
+        "desc": "Periksa fungsi pengereman total secara dinamis (termasuk tuas dan cakram/tromol)."
+      },
+      {
+        "task": "Cara Kerja Kunci Rem",
+        "desc": "Periksa fungsi brake lock (kunci rem) untuk parkir di tanjakan/turunan."
+      },
+      {
+        "task": "Arah Sinar Lampu Depan",
+        "desc": "Sesuaikan arah sorot lampu depan agar tidak menyilaukan pengendara lain."
+      },
+      {
+        "task": "Keausan kampas kopling",
+        "desc": "Periksa ketebalan kampas kopling ganda pada matic agar tidak selip saat akselerasi."
+      },
+      {
+        "task": "Standar Samping",
+        "desc": "Periksa kelancaran engsel standar samping dan switch pemutus mesin otomatis."
+      },
+      {
+        "task": "Suspensi",
+        "desc": "Cek kebocoran oli shockbreaker depan/belakang demi kenyamanan suspensi."
+      },
+      {
+        "task": "Mur, Baut, Pengencang",
+        "desc": "Periksa kekencangan baut dan mur pada sasis, roda, kemudi, dan suspensi."
+      },
+      {
+        "task": "Roda/Ban",
+        "desc": "Cek tekanan angin ban dan kedalaman alur ban agar tidak tergelincir."
+      },
+      {
+        "task": "Bantalan Kepala Kemudi",
+        "desc": "Periksa kestabilan komstir agar setang tidak oblak atau terasa kaku berat."
+      }
+    ]
+  },
+  {
+    "id": "honda-pcx-schedule",
+    "model_ids": [
+      "honda-pcx-160"
+    ],
+    "range_km_min": 0,
+    "range_km_max": 999999,
+    "must_do": [
+      {
+        "task": "Ganti Saringan Udara",
+        "interval": "Setiap 18.000 km",
+        "due_km": 18000
+      },
+      {
+        "task": "Ganti Busi",
+        "interval": "Setiap 12.000 km",
+        "due_km": 12000
+      },
+      {
+        "task": "Ganti Oli Mesin (1.000 KM Pertama)",
+        "interval": "1.000 KM Pertama",
+        "due_km": 1000
+      },
+      {
+        "task": "Ganti Oli Mesin",
+        "interval": "Setiap 6.000 km",
+        "due_km": 6000
+      },
+      {
+        "task": "Ganti Cairan Pendingin Radiator",
+        "interval": "Setiap 36.000 km",
+        "due_km": 36000
+      },
+      {
+        "task": "Ganti Drive belt",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      },
+      {
+        "task": "Ganti Oli Final Drive",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      },
+      {
+        "task": "Ganti Minyak Rem",
+        "interval": "Setiap 24.000 km",
+        "due_km": 24000
+      }
+    ],
+    "check": [
+      {
+        "task": "Saluran Bahan Bakar",
+        "desc": "Periksa saluran bahan bakar dari retakan, kebocoran, atau sumbatan demi keselamatan."
+      },
+      {
+        "task": "Cara Kerja Gas Tangan",
+        "desc": "Pastikan putaran gas tangan dapat kembali ke posisi semula dengan lancar saat dilepas."
+      },
+      {
+        "task": "Saringan Udara",
+        "desc": "Saringan udara tipe viskos tidak boleh dibersihkan dengan semprotan angin. Ganti jika kotor."
+      },
+      {
+        "task": "Pernapasan Bak Mesin",
+        "desc": "Bersihkan selang pernapasan bak mesin dari endapan air/oli."
+      },
+      {
+        "task": "Busi",
+        "desc": "Periksa kerenggangan elektroda busi dan bersihkan dari tumpukan karbon pengapian."
+      },
+      {
+        "task": "Jarak Renggang Klep",
+        "desc": "Periksa kerenggangan klep (celah katup) agar kompresi mesin tetap optimal."
+      },
+      {
+        "task": "Oli Mesin",
+        "desc": "Ganti oli mesin berkala untuk mencegah keausan komponen internal silinder."
+      },
+      {
+        "task": "Saringan Kasa Oli Mesin",
+        "desc": "Bersihkan saringan kasa oli mesin untuk menyaring gram besi kasar."
+      },
+      {
+        "task": "Putaran Stasioner Mesin",
+        "desc": "Periksa putaran stasioner (idle) mesin agar tidak terlalu tinggi atau mati mendadak."
+      },
+      {
+        "task": "Cairan Pendingin Radiator",
+        "desc": "Periksa ketinggian air radiator (coolant) di tangki cadangan (reservoir tank)."
+      },
+      {
+        "task": "Sistem Pendingin",
+        "desc": "Periksa jalur pendingin radiator dari kebocoran slang atau kerusakan sirip radiator."
+      },
+      {
+        "task": "Sistem Pengaturan Emisi Evaporatif",
+        "desc": "Periksa sistem emisi evaporatif dari sumbatan atau kebocoran slang."
+      },
+      {
+        "task": "Drive belt",
+        "desc": "Periksa kondisi sabuk penggerak (V-Belt) dari keretakan atau keausan parah."
+      },
+      {
+        "task": "Oli Gear Transmisi",
+        "desc": "Ganti oli gardan berkala agar transmisi matic tidak berisik dan aus."
+      },
+      {
+        "task": "Oli Final Drive",
+        "desc": "Ganti oli gardan berkala agar transmisi matic tidak berisik dan aus."
+      },
+      {
+        "task": "Baterai",
+        "desc": "Periksa tegangan aki untuk kestabilan suplai listrik starter dan sensor injeksi."
+      },
+      {
+        "task": "Minyak Rem",
+        "desc": "Periksa level minyak rem dan ganti secara berkala untuk menjaga tekanan hidrolik."
+      },
+      {
+        "task": "Keausan Kampas Rem",
+        "desc": "Cek ketebalan kampas rem depan dan belakang untuk keselamatan pengereman."
+      },
+      {
+        "task": "Sistem Rem",
+        "desc": "Periksa fungsi pengereman total secara dinamis (termasuk tuas dan cakram/tromol)."
+      },
+      {
+        "task": "Cara Kerja Kunci Rem",
+        "desc": "Periksa fungsi brake lock (kunci rem) untuk parkir di tanjakan/turunan."
+      },
+      {
+        "task": "Arah Sinar Lampu Depan",
+        "desc": "Sesuaikan arah sorot lampu depan agar tidak menyilaukan pengendara lain."
+      },
+      {
+        "task": "Keausan kampas kopling",
+        "desc": "Periksa ketebalan kampas kopling ganda pada matic agar tidak selip saat akselerasi."
+      },
+      {
+        "task": "Standar Samping",
+        "desc": "Periksa kelancaran engsel standar samping dan switch pemutus mesin otomatis."
+      },
+      {
+        "task": "Suspensi",
+        "desc": "Cek kebocoran oli shockbreaker depan/belakang demi kenyamanan suspensi."
+      },
+      {
+        "task": "Mur, Baut, Pengencang",
+        "desc": "Periksa kekencangan baut dan mur pada sasis, roda, kemudi, dan suspensi."
+      },
+      {
+        "task": "Roda/Ban",
+        "desc": "Cek tekanan angin ban dan kedalaman alur ban agar tidak tergelincir."
+      },
+      {
+        "task": "Bantalan Kepala Kemudi",
+        "desc": "Periksa kestabilan komstir agar setang tidak oblak atau terasa kaku berat."
       }
     ]
   }

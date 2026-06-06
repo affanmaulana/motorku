@@ -259,7 +259,7 @@ export default function MotorDetail() {
       <div className="mt-xl flex flex-col gap-sm animate-fade-in-up" style={{ animationDelay: '0.16s', opacity: 0 }}>
         <button
           onClick={() => setIsModalOpen(true)}
-          className="w-full btn-primary flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98] transition-all py-3.5 px-4 font-semibold text-sm rounded-lg"
+          className="w-full btn-primary flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98] transition-all h-12 px-4 font-semibold text-sm rounded-lg"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
@@ -270,7 +270,7 @@ export default function MotorDetail() {
 
         <button
           onClick={handleReset}
-          className="w-full btn-secondary flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98] transition-all py-3.5 px-4 font-semibold text-sm rounded-lg"
+          className="w-full btn-secondary flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98] transition-all h-12 px-4 font-semibold text-sm rounded-lg"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>

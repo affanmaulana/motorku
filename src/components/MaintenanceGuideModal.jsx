@@ -84,7 +84,7 @@ function ModalCheckItem({ item }) {
       {isExpanded && (
         <div className="mt-sm pt-sm border-t border-hairline/40 animate-fade-in">
           <p className="text-[12px] leading-relaxed text-muted font-medium">
-            <span className="text-signature-coral font-semibold">Tujuan Pengecekan:</span> {item.desc}
+            {item.desc}
           </p>
         </div>
       )}
@@ -93,6 +93,8 @@ function ModalCheckItem({ item }) {
 }
 
 export default function MaintenanceGuideModal({ isOpen, onClose, motorId }) {
+  const [showAllChecks, setShowAllChecks] = useState(false)
+  
   // Prevent scrolling of background when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -280,10 +282,33 @@ export default function MaintenanceGuideModal({ isOpen, onClose, motorId }) {
                 </span>
               </div>
               <div className="space-y-xs">
-                {check.map((item, index) => (
+                {(showAllChecks ? check : check.slice(0, 5)).map((item, index) => (
                   <ModalCheckItem key={index} item={item} />
                 ))}
               </div>
+              
+              {check.length > 5 && (
+                <button
+                  onClick={() => setShowAllChecks(!showAllChecks)}
+                  className="w-full mt-sm h-12 px-md rounded-md border border-hairline hover:border-signature-mint/30 bg-canvas hover:bg-surface-soft active:bg-surface-strong transition-all duration-300 text-caption font-bold text-muted hover:text-ink cursor-pointer flex items-center justify-center gap-2 group shadow-sm"
+                >
+                  <span>
+                    {showAllChecks ? "Sembunyikan Pemeriksaan" : `Lihat ${check.length - 5} Pemeriksaan Lainnya`}
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`w-4 h-4 text-muted group-hover:text-ink transition-transform duration-300 ${showAllChecks ? 'rotate-180' : ''}`}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </button>
+              )}
             </div>
           )}
 

@@ -165,12 +165,18 @@ function CheckItem({ item }) {
 }
 
 export default function ResultCard({ data, onTaskAction }) {
+  const [showAllChecks, setShowAllChecks] = useState(false)
+
   if (!data) return null
 
   const mustDoCount = data.must_do ? data.must_do.length : 0
   const shouldCount = data.should_have_done ? data.should_have_done.length : 0
   const checkCount = data.check ? data.check.length : 0
   const amanCount = data.aman ? data.aman.length : 0
+
+  const visibleChecks = data.check 
+    ? (showAllChecks ? data.check : data.check.slice(0, 5)) 
+    : []
 
   return (
     <div className="space-y-xl">
@@ -336,9 +342,34 @@ export default function ResultCard({ data, onTaskAction }) {
 
         {data.check && data.check.length > 0 ? (
           <div className="space-y-xs">
-            {data.check.map((item, index) => (
-              <CheckItem key={index} item={item} />
-            ))}
+            <div className="space-y-xs transition-all duration-300">
+              {visibleChecks.map((item, index) => (
+                <CheckItem key={index} item={item} />
+              ))}
+            </div>
+            
+            {checkCount > 5 && (
+              <button
+                onClick={() => setShowAllChecks(!showAllChecks)}
+                className="w-full mt-sm h-12 px-md rounded-md border border-hairline hover:border-signature-mint/30 bg-canvas hover:bg-surface-soft active:bg-surface-strong transition-all duration-300 text-caption font-bold text-muted hover:text-ink cursor-pointer flex items-center justify-center gap-2 group shadow-sm"
+              >
+                <span>
+                  {showAllChecks ? "Sembunyikan Pemeriksaan" : `Lihat ${checkCount - 5} Pemeriksaan Lainnya`}
+                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`w-4 h-4 text-muted group-hover:text-ink transition-transform duration-300 ${showAllChecks ? 'rotate-180' : ''}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+            )}
           </div>
         ) : (
           <div className="p-xl rounded-md bg-surface-soft border border-hairline text-center">
