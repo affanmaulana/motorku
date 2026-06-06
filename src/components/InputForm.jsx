@@ -93,29 +93,12 @@ export default function InputForm({ onSubmit }) {
               setIsDropdownOpen(!isDropdownOpen)
               setSearchTerm('')
             }}
-            className={`text-input pl-10 font-sans cursor-pointer flex items-center select-none min-h-[46px]
-              ${selectedModel ? 'border-primary font-medium bg-surface-soft text-ink pr-16' : 'border-hairline shadow-sm text-muted/60 pr-10'}
+            className={`text-input pl-10 pr-10 font-sans cursor-pointer flex items-center select-none min-h-[46px]
+              ${selectedModel ? 'border-primary font-medium bg-surface-soft text-ink' : 'border-hairline shadow-sm text-muted/60'}
             `}
           >
             <span>{selectedModel ? selectedModel.name : "Pilih tipe motor..."}</span>
           </div>
-
-          {/* Close Button (if model is selected) */}
-          {selectedModel && (
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation()
-                setSelectedModel(null)
-                setSearchTerm('')
-              }}
-              className="absolute inset-y-0 right-10 flex items-center justify-center text-muted hover:text-signature-coral transition-colors cursor-pointer w-8 h-full z-10"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 6 6 18M6 6l12 12" />
-              </svg>
-            </button>
-          )}
 
           {/* Chevron Icon (Always on the very right) */}
           <div className="absolute inset-y-0 right-3.5 flex items-center pointer-events-none z-10">
