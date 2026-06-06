@@ -23,8 +23,7 @@
         "task": "Rumah Roller",
         "desc": "Cek keausan jalur roller. Jika sudah termakan, gerakan roller tidak akan mulus."
       }
-    ],
-    "human_message": "Berdasarkan data empiris, V-Belt motor 110cc seringkali lebih cepat aus di kondisi macet. Sebaiknya ganti di 20.000 km untuk keamanan."
+    ]
   },
   {
     "id": "air-cooled-matic-0k-4k",
@@ -66,8 +65,7 @@
           "yamaha-grand-filano"
         ]
       }
-    ],
-    "human_message": "Motor baru! Ganti oli mesin di 1.000 km pertama. Catatan: BeAT/Scoopy 2024+ hanya butuh 650ml oli. Motor kamu berpendingin udara, jaga sirip mesin tetap bersih."
+    ]
   },
   {
     "id": "air-cooled-matic-4k-20k",
@@ -139,8 +137,7 @@
         "task": "V-Belt Condition",
         "desc": "Cek keretakan pada gerigi sabuk. V-belt putus bisa merusak komponen internal CVT."
       }
-    ],
-    "human_message": "Jaga rutinitas ganti oli. BeAT/Scoopy 2024 wajib ganti tiap 2.000 km karena kapasitas hanya 650ml. Suzuki Nex II (650ml). Fazzio/Filano (Aki >12.4V). Jangan simpan remote dekat motor."
+    ]
   },
   {
     "id": "liquid-cooled-matic-125-0k-12k",
@@ -191,8 +188,7 @@
         "task": "Busi",
         "desc": "Kinerja pengapian optimal menjaga efisiensi bensin dan tarikan mesin tetap enteng."
       }
-    ],
-    "human_message": "Motor liquid-cooled butuh pengecekan air radiator. Gunakan oli 800ml untuk Vario 125 dan 900ml untuk Lexi 125."
+    ]
   },
   {
     "id": "liquid-cooled-matic-155-160-0k-12k",
@@ -268,8 +264,7 @@
         "task": "V-Belt",
         "desc": "Cek keretakan pada gerigi sabuk. V-belt putus bisa merusak komponen internal CVT."
       }
-    ],
-    "human_message": "Buku servis Honda 160cc menyarankan ganti oli per 6.000 km (800ml / 850ml jika kuras strainer) dengan busi NGK LMAR8L-9. Yamaha 155cc (NMAX/Aerox) disarankan ganti per 3.000 km (900ml) dengan busi NGK CPR8EA-9. Untuk kemacetan ekstrem, ganti oli setiap 2.000-2.500 km."
+    ]
   },
   {
     "id": "keyless-battery-replacement",
@@ -296,8 +291,7 @@
         "task": "Responsibilitas Remote",
         "desc": "Jika jarak deteksi berkurang atau lampu indikator remote redup, segera ganti baterai."
       }
-    ],
-    "human_message": "Baterai remote keyless (CR 2032) biasanya melemah setelah 2 tahun. Ganti sekarang untuk menghindari remote mati mendadak."
+    ]
   },
   {
     "id": "all-matic-coolant-drain",
@@ -337,8 +331,7 @@
         "task": "Ketebalan Kampas Rem",
         "desc": "Kampas rem matic lebih cepat habis karena minim engine brake."
       }
-    ],
-    "human_message": "Di iklim tropis, kualitas coolant dan minyak rem lebih cepat menurun (higroskopis). Ganti rutin untuk menjaga performa pengereman dan suhu mesin."
+    ]
   },
   {
     "id": "manual-maintenance-0k-25k",
@@ -387,8 +380,7 @@
         "task": "Filter Udara",
         "desc": "Filter kotor menyumbat asupan udara, membuat motor 'ngempos' dan boros bensin."
       }
-    ],
-    "human_message": "Untuk Suzuki Satria F150 FI, lakukan servis besar di 20.000 km (Busi: NGK MR8E-9). Jaga rantai tetap bersih dan terlumasi agar tidak berisik."
+    ]
   },
   {
     "id": "spark-plug-replacement-entry-matic",
@@ -410,8 +402,7 @@
         "due_km": 8000
       }
     ],
-    "check": [],
-    "human_message": "Busi nikel cepat aus akibat erosi elektroda, ganti tepat waktu agar tidak boros dan tarikan tetap responsif."
+    "check": []
   },
   {
     "id": "spark-plug-replacement-premium-matic",
@@ -433,8 +424,7 @@
         "due_km": 12000
       }
     ],
-    "check": [],
-    "human_message": "Busi precious metal (seperti LMAR8L-9) memberikan percikan stabil, ganti per 12.000 km mencegah mesin brebet/mati mendadak."
+    "check": []
   },
   {
     "id": "air-filter-replacement-viscous",
@@ -469,8 +459,7 @@
         "due_km": 12000
       }
     ],
-    "check": [],
-    "human_message": "Filter udara viskos (kertas berlapis oli) tidak boleh dicuci/disemprot angin. Wajib ganti per 12.000 km agar aliran udara mesin maksimal."
+    "check": []
   },
   {
     "id": "vbelt-roller-replacement-standard",
@@ -497,8 +486,7 @@
         "due_km": 24000
       }
     ],
-    "check": [],
-    "human_message": "Kondisi panas CVT membuat V-Belt rentan retak dan putus di jalan. Gantilah bersama roller sebelum 24.000 km."
+    "check": []
   },
   {
     "id": "final-drive-standard-chain",
@@ -517,8 +505,7 @@
         "due_km": 15000
       }
     ],
-    "check": [],
-    "human_message": "Rantai standar rentan kendor dan gir menajam, ganti satu set untuk mencegah rantai lepas atau gir gundul."
+    "check": []
   },
   {
     "id": "final-drive-oring-chain",
@@ -535,8 +522,7 @@
         "due_km": 20000
       }
     ],
-    "check": [],
-    "human_message": "Rantai O-Ring menahan gemuk di dalam, namun tetap perlu diganti per 20.000 km agar transfer tenaga selalu optimal."
+    "check": []
   },
   {
     "id": "suzuki-satria-f150-maintenance",
@@ -567,8 +553,7 @@
         "task": "Kopling",
         "desc": "Pastikan kabel kopling tidak kaku dan perpindahan gigi tetap halus."
       }
-    ],
-    "human_message": "Mesin DOHC Satria bekerja di RPM tinggi, oli sangat cepat rusak karena gesekan. Ganti oli mesin maksimal di 2.500 km."
+    ]
   },
   {
     "id": "suzuki-nex-ii-maintenance",
@@ -603,8 +588,7 @@
         "task": "Rem",
         "desc": "Pastikan kampas rem aman."
       }
-    ],
-    "human_message": "Untuk kondisi komuter/macet perkotaan, pelumasan mesin Nex II paling aman diganti di 2.500 km agar performa awet."
+    ]
   },
   {
     "id": "matic-entry-fallback",
@@ -640,8 +624,7 @@
         "task": "Ban",
         "desc": "Cek keausan ban dan tekanan angin demi stabilitas berkendara."
       }
-    ],
-    "human_message": "Panduan umum matic entry: Ganti oli rutin dan bersihkan CVT setiap 8.000 km agar tidak gredek."
+    ]
   },
   {
     "id": "matic-premium-fallback",
@@ -677,8 +660,7 @@
         "task": "Rem",
         "desc": "Pastikan sistem ABS/CBS bekerja normal tanpa malfungsi."
       }
-    ],
-    "human_message": "Panduan umum matic premium: pastikan sistem pendingin radiator selalu dalam kondisi optimal dan cek level oli."
+    ]
   },
   {
     "id": "manual-fallback",
@@ -714,8 +696,7 @@
         "task": "Gir Depan/Belakang",
         "desc": "Gir yang tajam merusak rantai dengan cepat dan berisik."
       }
-    ],
-    "human_message": "Panduan umum motor manual: rantai dan oli mesin adalah kunci keawetan mesin kamu."
+    ]
   },
   {
     "id": "global-fallback-high-km",
@@ -757,7 +738,6 @@
         "task": "Pengereman Total",
         "desc": "Uji coba pengereman mendadak untuk memastikan sistem ABS atau CBS berfungsi normal."
       }
-    ],
-    "human_message": "Motor sudah menempuh jarak sangat jauh. Lakukan servis besar menyeluruh, pembersihan Throttle Body, dan cek komstir untuk memastikan kenyamanan berkendara."
+    ]
   }
 ]

@@ -80,38 +80,36 @@ export default function InputForm({ onSubmit }) {
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v8" />
+              <path d="M8 12h8" />
             </svg>
           </div>
 
-          <input
-            type="text"
-            placeholder="Cari motor (ex: Nmax, Vario...)"
-            value={selectedModel ? selectedModel.name : searchTerm}
-            onFocus={() => {
+          <div
+            onClick={() => {
               setIsDropdownOpen(true)
-              if (selectedModel) {
-                setSearchTerm('')
-                setSelectedModel(null)
-              }
+              setSearchTerm('')
             }}
-            onChange={(e) => {
-              setSearchTerm(e.target.value)
-              setIsDropdownOpen(true)
-            }}
-            className={`text-input pl-10 pr-10 font-sans
-              ${selectedModel ? 'border-primary font-medium bg-surface-soft' : 'border-hairline shadow-sm'}
+            className={`text-input pl-10 pr-10 font-sans cursor-pointer flex items-center justify-between select-none min-h-[46px]
+              ${selectedModel ? 'border-primary font-medium bg-surface-soft text-ink' : 'border-hairline shadow-sm text-muted/60'}
             `}
-          />
+          >
+            <span>{selectedModel ? selectedModel.name : "Pilih tipe motor..."}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className={`w-4 h-4 text-muted transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </div>
 
           {selectedModel && (
             <button
               type="button"
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation()
                 setSelectedModel(null)
                 setSearchTerm('')
               }}
-              className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-muted hover:text-signature-coral transition-colors cursor-pointer"
+              className="absolute inset-y-0 right-10 flex items-center text-muted hover:text-signature-coral transition-colors cursor-pointer"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M18 6 6 18M6 6l12 12" />
@@ -123,6 +121,35 @@ export default function InputForm({ onSubmit }) {
         {/* Dropdown Menu - Clean Editorial Style */}
         {isDropdownOpen && (
           <div className="absolute z-[60] w-full mt-1.5 bg-canvas border border-hairline rounded-sm shadow-lg overflow-hidden animate-fade-in-up">
+            {/* Search Input inside Dropdown */}
+            <div className="p-sm border-b border-hairline bg-surface-soft flex items-center gap-xs">
+              <div className="relative w-full">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  placeholder="Ketik nama motor untuk mencari..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full bg-canvas border border-hairline rounded-sm pl-8.5 pr-8 py-1.5 text-caption font-sans text-ink focus:border-primary focus:outline-none placeholder-muted/65"
+                  autoFocus
+                />
+                {searchTerm && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchTerm('')}
+                    className="absolute inset-y-0 right-0 pr-2.5 flex items-center text-muted hover:text-signature-coral cursor-pointer"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 6 6 18M6 6l12 12" />
+                    </svg>
+                  </button>
+                )}
+              </div>
+            </div>
             <div className="max-h-60 overflow-y-auto custom-scrollbar">
               {filteredModels.length > 0 ? (
                 filteredModels.map((model) => (

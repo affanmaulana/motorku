@@ -247,13 +247,6 @@ export default function MotorDetail() {
               </p>
             </div>
           </div>
-
-          <div className="border-t border-hairline"></div>
-
-          <div className="p-lg bg-soft-peach/60 dark:bg-soft-peach/20 border-l-4 border-signature-coral">
-            <span className="text-[9px] font-bold text-signature-coral uppercase tracking-widest block mb-1 font-display">REKOMENDASI MONTIRKU</span>
-            <p className="text-[12.5px] leading-relaxed font-medium text-ink">{result?.human_message}</p>
-          </div>
         </div>
       </div>
 

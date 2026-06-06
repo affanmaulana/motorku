@@ -1,5 +1,107 @@
 import { useState } from 'react'
 
+export function formatInterval(str) {
+  if (!str) return '';
+  let res = str.trim();
+  
+  if (/1\.000\s*km\s*pertama/i.test(res)) {
+    return "1.000 KM Pertama";
+  }
+
+  // Replace various prefixes with "Setiap "
+  res = res.replace(/^(per|disarankan\s+per|wajib\s+setiap|pengecekan\s+per|segera\s*>\s*)\s+/i, "Setiap ");
+
+  // Case insensitive replacement for km/KM
+  res = res.replace(/km/gi, "KM");
+
+  // Standardize spaces in ranges
+  res = res.replace(/([\d\.]+)\s*-\s*([\d\.]+)/g, "$1 - $2");
+
+  // Re-order Time and KM if they coexist
+  if (/setiap\s+(\d+)\s+(bulan|tahun)\s*\/\s*([\d\.]+)\s*KM/i.test(res)) {
+    res = res.replace(/setiap\s+(\d+)\s+(bulan|tahun)\s*\/\s*([\d\.]+)\s*KM/i, "Setiap $3 KM / $1 $2");
+  }
+  
+  if (/estimasi\s+per\s+(\d+)\s+tahun/i.test(res)) {
+    res = res.replace(/estimasi\s+per\s+(\d+)\s+tahun/i, "Setiap $1 Tahun");
+  }
+
+  // Ensure it starts with "Setiap " (except "Pertama")
+  if (!res.startsWith("Setiap") && !res.includes("Pertama")) {
+    res = "Setiap " + res;
+  }
+
+  // Remove duplicate "Setiap Setiap"
+  res = res.replace(/^Setiap\s+Setiap\s+/i, "Setiap ");
+
+  // Strip parentheses content
+  res = res.replace(/\s*\(.*?\)/g, "");
+
+  // Clean double spaces
+  res = res.replace(/\s+/g, " ");
+
+  return res.trim();
+}
+
+export function formatTaskName(name) {
+  if (!name) return '';
+  let res = name.trim();
+  const cleanStr = res.toLowerCase();
+
+  if (cleanStr.includes("ganti oli mesin")) {
+    return "Ganti Oli Mesin";
+  }
+  if (cleanStr.includes("ganti oli gardan")) {
+    return "Ganti Oli Gardan";
+  }
+  if (cleanStr.includes("ganti v-belt") || cleanStr === "v-belt" || cleanStr === "v-belt condition") {
+    return "Ganti V-Belt & Roller Set";
+  }
+  if (cleanStr.includes("busi")) {
+    return "Ganti Busi";
+  }
+  if (cleanStr.includes("filter udara")) {
+    return "Ganti Filter Udara";
+  }
+  if (cleanStr.includes("tegangan aki") || cleanStr.includes("aki (hybrid)")) {
+    return "Cek Tegangan Aki";
+  }
+  if (cleanStr.includes("air radiator") || cleanStr.includes("cairan radiator")) {
+    if (cleanStr.includes("kuras")) {
+      return "Kuras & Ganti Air Radiator";
+    }
+    return "Cek Air Radiator";
+  }
+  if (cleanStr.includes("penyetelan klep") || cleanStr.includes("setel klep")) {
+    return "Setel Celah Klep";
+  }
+  if (cleanStr.includes("gear set") || cleanStr.includes("gir set") || cleanStr.includes("rantai")) {
+    if (cleanStr.includes("periksa") || cleanStr.includes("mulur")) {
+      return "Periksa Rantai & Gir";
+    }
+    return "Ganti Gear Set & Rantai";
+  }
+  if (cleanStr.includes("servis besar")) {
+    return "Servis Besar Menyeluruh";
+  }
+  if (cleanStr.includes("minyak rem")) {
+    return "Ganti Minyak Rem";
+  }
+  if (cleanStr.includes("roller")) {
+    if (cleanStr.includes("rumah")) {
+      return "Periksa Rumah Roller";
+    }
+    return "Periksa Kondisi Roller";
+  }
+
+  // Remove parentheses
+  res = res.replace(/\s*\(.*?\)/g, "");
+  // Remove trailing dashes
+  res = res.replace(/\s*-\s*.*$/g, "");
+
+  return res.trim();
+}
+
 const wrenchIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
@@ -54,7 +156,7 @@ function CheckItem({ item }) {
       {isExpanded && (
         <div className="mt-sm pt-sm border-t border-hairline/40 animate-fade-in">
           <p className="text-[12px] leading-relaxed text-muted font-medium">
-            <span className="text-signature-coral font-semibold">Kenapa perlu dicek?</span> {item.desc}
+            {item.desc}
           </p>
         </div>
       )}
@@ -97,15 +199,15 @@ export default function ResultCard({ data, onTaskAction }) {
                     {wrenchIcon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-caption font-bold text-ink dark:text-white">{item.task}</p>
-                    <p className="text-[11px] text-ink/80 dark:text-[#ffb68c] font-bold mt-0.5">
-                      Target: {item.interval}
+                    <p className="text-caption font-bold text-ink dark:text-white">{formatTaskName(item.task)}</p>
+                    <p className="text-[11.5px] text-ink/65 dark:text-[#ffb68c]/75 font-medium mt-0.5">
+                      {formatInterval(item.interval)}
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-sm">
-                  <p className="text-[11px] font-bold text-ink/75 dark:text-white/60 flex-1">Udah dikerjain belum?</p>
+                  <p className="text-[10px] uppercase tracking-wider font-semibold text-ink/50 dark:text-white/40 flex-1">Udah dikerjain belum?</p>
                   <button
                     onClick={() => onTaskAction(item.task, 'done')}
                     className="px-sm py-1.5 rounded-sm bg-ink text-canvas dark:bg-[#ffb68c] dark:text-[#0f1319] text-[11px] font-bold hover:bg-ink/90 dark:hover:bg-[#ffb68c]/90 transition-all duration-300 cursor-pointer shadow-sm active:scale-95"
@@ -148,9 +250,9 @@ export default function ResultCard({ data, onTaskAction }) {
                   {warningIcon}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-caption font-bold text-white leading-snug whitespace-normal break-words">{item.task}</p>
+                  <p className="text-caption font-bold text-white leading-snug whitespace-normal break-words">{formatTaskName(item.task)}</p>
                   <p className="text-[11px] text-white/80 dark:text-[#ff6b54] font-bold mt-0.5">
-                    {item.interval}
+                    {formatInterval(item.interval)}
                   </p>
                 </div>
                 <div className="flex-shrink-0 flex flex-col items-end gap-xs">
@@ -205,8 +307,8 @@ export default function ResultCard({ data, onTaskAction }) {
                   </svg>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="text-caption font-semibold text-muted dark:text-white/40 line-through block whitespace-normal break-words leading-snug">{item.task}</span>
-                  <span className="text-[10px] text-success dark:text-[#86deb6] font-semibold uppercase">{item.interval}</span>
+                  <span className="text-caption font-semibold text-muted dark:text-white/40 line-through block whitespace-normal break-words leading-snug">{formatTaskName(item.task)}</span>
+                  <span className="text-[10px] text-success dark:text-[#86deb6] font-semibold uppercase">{formatInterval(item.interval)}</span>
                 </div>
                 <button
                   onClick={() => onTaskAction(item.task, null)}

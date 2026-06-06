@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import serviceData from '../data/serviceData.json'
 import motorModels from '../data/motorModels.json'
+import { formatInterval, formatTaskName } from './ResultCard'
 
 // High-fidelity custom SVG icons for the editorial guide
 const closeIcon = (
@@ -62,7 +63,7 @@ function ModalCheckItem({ item }) {
           </svg>
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-caption font-semibold text-ink leading-tight">{item.task}</p>
+          <p className="text-caption font-semibold text-ink leading-tight">{formatTaskName(item.task)}</p>
         </div>
         <div className="flex-shrink-0">
           <svg
@@ -224,7 +225,7 @@ export default function MaintenanceGuideModal({ isOpen, onClose, motorId }) {
                       {calendarIcon}
                     </div>
                     <div>
-                      <p className="text-caption font-bold text-ink dark:text-white">{item.task}</p>
+                      <p className="text-caption font-bold text-ink dark:text-white">{formatTaskName(item.task)}</p>
                       <p className="text-[12px] text-muted dark:text-white/60 font-medium leading-relaxed mt-1">
                         Pembersihan gram besi sisa pabrikan dan penyesuaian awal celah komponen mesin.
                       </p>
@@ -256,9 +257,9 @@ export default function MaintenanceGuideModal({ isOpen, onClose, motorId }) {
                     {wrenchIcon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-caption font-bold text-ink dark:text-white leading-tight">{item.task}</p>
+                    <p className="text-caption font-bold text-ink dark:text-white leading-tight">{formatTaskName(item.task)}</p>
                     <p className="text-[11px] text-signature-coral dark:text-[#ff6b54] font-bold mt-0.5 uppercase tracking-wide">
-                      {item.interval}
+                      {formatInterval(item.interval)}
                     </p>
                   </div>
                 </div>
@@ -309,9 +310,9 @@ export default function MaintenanceGuideModal({ isOpen, onClose, motorId }) {
                       {alertIcon}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-caption font-bold text-ink dark:text-white leading-tight">{item.task}</p>
+                      <p className="text-caption font-bold text-ink dark:text-white leading-tight">{formatTaskName(item.task)}</p>
                       <p className="text-[11px] text-muted dark:text-[#9297a0] font-bold mt-0.5 uppercase tracking-wide">
-                        {item.interval || 'Rutin Berkala'}
+                        {item.interval ? formatInterval(item.interval) : 'Rutin Berkala'}
                       </p>
                     </div>
                   </div>
