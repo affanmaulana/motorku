@@ -90,7 +90,7 @@ export default function InputForm({ onSubmit }) {
           {/* Styled Select Box */}
           <div
             onClick={() => {
-              setIsDropdownOpen(true)
+              setIsDropdownOpen(!isDropdownOpen)
               setSearchTerm('')
             }}
             className={`text-input pl-10 font-sans cursor-pointer flex items-center select-none min-h-[46px]
