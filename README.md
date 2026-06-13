@@ -11,13 +11,13 @@ Dengan memadukan data rekomendasi resmi pabrikan (*manufacturer specs*) serta da
 Aplikasi ini menyajikan antarmuka premium berbasis editorial dengan serangkaian fitur interaktif:
 
 ### 1. Rekomendasi Pintar Spesifik Tipe (20 Model Motor)
-Sistem memiliki basis data bawaan ([motorModels.json](file:///d:/Dokumen/SaaS%20with%20AI/Motorcare/src/data/motorModels.json) & [serviceData.json](file:///d:/Dokumen/SaaS%20with%20AI/Motorcare/src/data/serviceData.json)) untuk 20 model motor populer di Indonesia dari berbagai brand besar:
+Sistem memiliki data rekomendasi berkala ([motorModels.json](src/data/motorModels.json) & [serviceData.json](src/data/serviceData.json)) yang disinkronkan secara presisi dari jadwal resmi pabrikan (seperti [honda.xlsx](honda.xlsx)) untuk 20 model motor populer di Indonesia:
 *   **Honda**: Scoopy & Beat 110 (eSP/eSAF), Vario 125, Vario 160, PCX 160, ADV 160 (eSP+ 4-valve), Supra X 125, Revo Fit (bebek komuter), serta CRF150L (dual-purpose).
 *   **Yamaha**: Mio M3, Gear 125, Fazzio & Grand Filano (Blue Core Hybrid-Assist), Lexi 125, NMAX 155, Aerox 155 (VVA engine), serta Vixion & R15 (sport transmisi manual).
 *   **Suzuki**: Nex II (matic air-cooled) dan Satria F150 (DOHC kopling basah).
 
 ### 2. Klasifikasi Tugas Berbasis Logika Cerdas
-Alih-alih menyajikan daftar statis, Motorku menghitung status perawatan secara dinamis menggunakan pembacaan odometer (KM) dengan aturan toleransi cerdas pada [MotorDetail.jsx](file:///d:/Dokumen/SaaS%20with%20AI/Motorcare/src/pages/MotorDetail.jsx):
+Alih-alih menyajikan daftar statis, Motorku menghitung status perawatan secara dinamis menggunakan pembacaan odometer (KM) dengan aturan toleransi cerdas pada [MotorDetail.jsx](src/pages/MotorDetail.jsx):
 *   **Wajib Dikerjakan**: Tugas servis krusial yang berada tepat pada jadwal interval.
 *   **Konfirmasi Service (Early Warning / Overdue)**: Tugas yang berada dalam rentang toleransi (*leeway*) 25% sebelum jatuh tempo atau 20% setelah jatuh tempo (misalnya oli mesin inreyen pertama di kisaran 750 km - 1.200 km). Pengguna ditanya konfirmasi apakah servis ini sudah dilakukan.
 *   **Aman (Sudah Selesai)**: Tugas yang telah dikonfirmasi selesai oleh pengguna secara interaktif.
@@ -31,9 +31,10 @@ Alih-alih menyajikan daftar statis, Motorku menghitung status perawatan secara d
 *   **Sistem Hybrid**: Pengujian tegangan aki berkala khusus motor hybrid (voltase minimal 12.4V) demi menjaga fungsi *hybrid-assist* tetap berjalan optimal.
 
 ### 4. Interactive Checklist & State Persistence
-*   Pengguna dapat mencentang tugas yang sudah selesai (*Sudah/Belum*).
-*   Data pilihan motor dan odometer disimpan dengan aman secara lokal menggunakan `localStorage`, sehingga pengguna tidak kehilangan progress/data saat halaman dimuat ulang.
-*   Tombol reset sekali-klik untuk beralih atau mengganti ke jenis motor lainnya.
+*   **Pembaruan Status Interaktif**: Pengguna dapat mencentang tugas yang sudah selesai (*Sudah/Belum*).
+*   **Antarmuka Checklist Ringkas**: Daftar pemeriksaan rutin yang melebihi 5 item otomatis disembunyikan di bawah tombol ekspansi (*Lihat/Sembunyikan Pemeriksaan Lainnya*) untuk menjaga tampilan dashboard tetap bersih dan nyaman dibaca.
+*   **Penyimpanan Lokal**: Data pilihan motor dan odometer disimpan dengan aman menggunakan `localStorage`, sehingga data tidak hilang saat halaman dimuat ulang.
+*   **Reset Sekali-Klik**: Tombol untuk membersihkan sesi dan beralih ke jenis motor lainnya dengan cepat.
 
 ### 5. Desain Premium (Light & Dark Mode)
 *   Menggunakan palet warna HSL premium (Signature Coral, Peach, Mint, Cream, Canvas, Ink) untuk tampilan editorial modern.
